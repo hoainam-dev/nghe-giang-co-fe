@@ -1,8 +1,8 @@
 "use client";
 
 import GLink from "@/components/general/GLink";
-import { useEffect, useState } from "react";
 import { navItems, siteConfig } from "@/data/site";
+import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -46,7 +46,6 @@ export default function Header() {
           </div>
           <div>
             <p className="text-base font-bold text-[#0b2f66]">{siteConfig.name}</p>
-            <p className="text-xs text-slate-500">{siteConfig.domain}</p>
           </div>
         </GLink>
 
@@ -83,22 +82,33 @@ export default function Header() {
         </button>
       </div>
 
-      {open && (
-        <div className="border-t border-slate-100 bg-white px-4 py-4 lg:hidden">
-          <nav className="flex flex-col gap-3">
-            {navItems.map((item) => (
+      <div
+        className={cn(
+          "absolute left-0 top-full z-50 grid w-full overflow-hidden border-t border-slate-100 bg-white shadow-xl transition-[grid-template-rows,opacity] duration-500 ease-out lg:hidden",
+          open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0",
+        )}
+      >
+        <div className="min-h-0">
+          <nav className="flex flex-col gap-2 px-4 py-4">
+            {navItems.map((item, index) => (
               <GLink
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="rounded-lg px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50"
+                style={{
+                  transitionDelay: open ? `${index * 70}ms` : "0ms",
+                }}
+                className={cn(
+                  "rounded-lg px-3 py-3 text-sm font-semibold text-slate-700 transition-all duration-500 hover:bg-slate-50",
+                  open ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0",
+                )}
               >
                 {item.label}
               </GLink>
             ))}
           </nav>
         </div>
-      )}
+      </div>
     </header>
   );
 }

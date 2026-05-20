@@ -11,7 +11,7 @@ export default function AboutSection() {
         <FadeIn>
           <div className="relative overflow-hidden rounded-4xl">
             <Image
-              src="/images/about-factory.jpg"
+              src="/images/mock_company.jpg"
               alt="Nhà máy xi măng"
               width={760}
               height={560}

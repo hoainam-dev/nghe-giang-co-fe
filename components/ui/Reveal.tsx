@@ -65,11 +65,22 @@ export default function Reveal({
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setVisible(entry.isIntersecting);
+        const rect = entry.boundingClientRect;
+        const isFullyOut =
+          rect.bottom < -80 || rect.top > window.innerHeight + 80;
+
+        if (entry.isIntersecting) {
+          setVisible(true);
+          return;
+        }
+
+        if (isFullyOut) {
+          setVisible(false);
+        }
       },
       {
-        threshold: 0.18,
-        rootMargin: "0px 0px -60px 0px",
+        threshold: 0.12,
+        rootMargin: "80px 0px 80px 0px",
       },
     );
 

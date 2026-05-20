@@ -132,15 +132,11 @@ export default function ProductSection() {
                     </div>
 
                     <div className="p-6">
-                      <p className="mb-2 text-xs font-bold uppercase tracking-[0.18em] text-[#d7a321]">
+                      <p className="mb-2 text-xs font-bold tracking-[0.18em] text-[#d7a321] uppercase">
                         Nghệ Giang
                       </p>
-                      <h3 className="text-xl font-bold text-[#0b2f66]">
-                        {item.name}
-                      </h3>
-                      <p className="mt-3 text-sm leading-6 text-slate-600">
-                        {item.desc}
-                      </p>
+                      <h3 className="text-xl font-bold text-[#0b2f66]">{item.name}</h3>
+                      <p className="mt-3 text-sm leading-6 text-slate-600">{item.desc}</p>
 
                       <GLink
                         href="/san-pham"

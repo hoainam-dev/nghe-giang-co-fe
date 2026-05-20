@@ -27,17 +27,11 @@ export function GImage({
   const srcKey = toSrcKey(src);
   const isEmptySrc = typeof src === "string" && src.trim().length === 0;
   const [failedSrcKey, setFailedSrcKey] = useState<string | null>(null);
-  const shouldShowFallback =
-    enableFallback && (isEmptySrc || failedSrcKey === srcKey);
+  const shouldShowFallback = enableFallback && (isEmptySrc || failedSrcKey === srcKey);
 
   if (shouldShowFallback) {
     return (
-      fallback ?? (
-        <div
-          aria-hidden
-          className={cn("h-full w-full bg-zinc-200", fallbackClassName)}
-        />
-      )
+      fallback ?? <div aria-hidden className={cn("h-full w-full bg-zinc-200", fallbackClassName)} />
     );
   }
 

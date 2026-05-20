@@ -28,7 +28,7 @@ export default function ProjectSection() {
                   />
                 </div>
                 <div className="p-6">
-                  <p className="text-sm font-bold uppercase tracking-widest text-[#d7a321]">
+                  <p className="text-sm font-bold tracking-widest text-[#d7a321] uppercase">
                     {item.category}
                   </p>
                   <h3 className="mt-2 text-xl font-bold">{item.title}</h3>

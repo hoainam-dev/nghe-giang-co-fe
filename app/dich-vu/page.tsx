@@ -7,9 +7,7 @@ export default function ServicePage() {
     <>
       <section className="bg-[#071f45] py-24 text-white">
         <Container>
-          <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#d7a321]">
-            Dịch vụ
-          </p>
+          <p className="text-sm font-bold tracking-[0.2em] text-[#d7a321] uppercase">Dịch vụ</p>
           <h1 className="mt-4 text-4xl font-black md:text-5xl">
             Dịch vụ cung ứng và tư vấn vật liệu
           </h1>

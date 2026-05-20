@@ -7,17 +7,21 @@ export default function Footer() {
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-3 lg:px-8">
         <div>
           <h3 className="text-xl font-bold">{siteConfig.name}</h3>
-          <p className="mt-4 text-sm leading-6 text-blue-100">
-            {siteConfig.description}
-          </p>
+          <p className="mt-4 text-sm leading-6 text-blue-100">{siteConfig.description}</p>
         </div>
 
         <div>
           <h4 className="font-bold">Liên hệ</h4>
           <div className="mt-4 space-y-3 text-sm text-blue-100">
-            <p className="flex gap-2"><Phone size={18} /> {siteConfig.phone}</p>
-            <p className="flex gap-2"><Mail size={18} /> {siteConfig.email}</p>
-            <p className="flex gap-2"><MapPin size={18} /> {siteConfig.address}</p>
+            <p className="flex gap-2">
+              <Phone size={18} /> {siteConfig.phone}
+            </p>
+            <p className="flex gap-2">
+              <Mail size={18} /> {siteConfig.email}
+            </p>
+            <p className="flex gap-2">
+              <MapPin size={18} /> {siteConfig.address}
+            </p>
           </div>
         </div>
 

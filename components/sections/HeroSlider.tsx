@@ -24,7 +24,7 @@ const slides = [
   },
 ];
 
-export default function HomeImageSlider() {
+export default function HeroSlider() {
   const [active, setActive] = useState(0);
 
   useEffect(() => {
@@ -46,9 +46,7 @@ export default function HomeImageSlider() {
                   key={slide.title}
                   className={cn(
                     "absolute inset-0 transition-all duration-1000",
-                    active === index
-                      ? "translate-y-0 opacity-100"
-                      : "translate-y-8 opacity-0",
+                    active === index ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0",
                   )}
                 >
                   <Image
@@ -62,12 +60,10 @@ export default function HomeImageSlider() {
 
                   <div className="absolute inset-0 flex items-center">
                     <div className="max-w-2xl px-6 md:px-12">
-                      <p className="mb-4 text-sm font-bold uppercase tracking-[0.2em] text-[#d7a321]">
+                      <p className="mb-4 text-sm font-bold tracking-[0.2em] text-[#d7a321] uppercase">
                         Nghệ Giang
                       </p>
-                      <h2 className="text-3xl font-black text-white md:text-5xl">
-                        {slide.title}
-                      </h2>
+                      <h2 className="text-3xl font-black text-white md:text-5xl">{slide.title}</h2>
                       <p className="mt-5 text-base leading-7 text-blue-50 md:text-lg">
                         {slide.desc}
                       </p>
@@ -85,9 +81,7 @@ export default function HomeImageSlider() {
                   onClick={() => setActive(index)}
                   className={cn(
                     "h-2.5 rounded-full transition-all",
-                    active === index
-                      ? "w-10 bg-[#d7a321]"
-                      : "w-2.5 bg-white/60",
+                    active === index ? "w-10 bg-[#d7a321]" : "w-2.5 bg-white/60",
                   )}
                   aria-label={`Slide ${index + 1}`}
                 />

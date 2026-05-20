@@ -8,7 +8,7 @@ export default function CTASection() {
         <div className="overflow-hidden rounded-4xl bg-[linear-gradient(135deg,#0b4ea2,#071f45)] p-8 text-white md:p-12">
           <div className="grid items-center gap-8 md:grid-cols-[1fr_auto]">
             <div>
-              <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#d7a321]">
+              <p className="text-sm font-bold tracking-[0.2em] text-[#d7a321] uppercase">
                 Liên hệ Nghệ Giang
               </p>
               <h2 className="mt-3 text-3xl font-black md:text-4xl">

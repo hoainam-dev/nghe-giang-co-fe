@@ -2,7 +2,7 @@ import { MessageCircle, Phone } from "lucide-react";
 
 export default function FloatingContact() {
   return (
-    <div className="fixed bottom-5 right-5 z-50 flex flex-col gap-3">
+    <div className="fixed right-5 bottom-5 z-50 flex flex-col gap-3">
       <a
         href="tel:0900000000"
         className="flex size-12 items-center justify-center rounded-full bg-[#0b4ea2] text-white shadow-lg"

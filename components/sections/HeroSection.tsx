@@ -8,7 +8,7 @@ export default function HeroSection() {
   return (
     <section className="relative overflow-hidden bg-[#071f45]">
       <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(11,78,162,0.95),rgba(7,31,69,0.9)),url('/images/hero-cement.jpg')] bg-cover bg-center" />
-      <div className="absolute -right-24 top-20 size-72 rounded-full bg-[#d7a321]/20 blur-3xl" />
+      <div className="absolute top-20 -right-24 size-72 rounded-full bg-[#d7a321]/20 blur-3xl" />
       <div className="absolute -bottom-24 -left-24 size-80 rounded-full bg-blue-400/20 blur-3xl" />
 
       <Container className="relative grid min-h-[720px] items-center gap-12 py-20 lg:grid-cols-[1.1fr_0.9fr]">
@@ -21,7 +21,7 @@ export default function HeroSection() {
           </Reveal>
 
           <Reveal variant="blur" delay={120}>
-            <h1 className="max-w-4xl text-4xl font-black leading-tight tracking-tight text-white md:text-6xl">
+            <h1 className="max-w-4xl text-4xl leading-tight font-black tracking-tight text-white md:text-6xl">
               {siteConfig.name}
             </h1>
           </Reveal>
@@ -61,12 +61,8 @@ export default function HeroSection() {
               ].map(([value, label], index) => (
                 <Reveal key={label} variant="zoom-in" delay={index * 100}>
                   <div className="rounded-3xl bg-white p-6 transition duration-300 hover:-translate-y-1 hover:shadow-xl">
-                    <p className="text-3xl font-black text-[#0b4ea2]">
-                      {value}
-                    </p>
-                    <p className="mt-2 text-sm font-semibold text-slate-600">
-                      {label}
-                    </p>
+                    <p className="text-3xl font-black text-[#0b4ea2]">{value}</p>
+                    <p className="mt-2 text-sm font-semibold text-slate-600">{label}</p>
                   </div>
                 </Reveal>
               ))}

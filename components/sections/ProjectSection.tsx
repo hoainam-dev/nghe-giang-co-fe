@@ -13,6 +13,7 @@ export default function ProjectSection() {
           eyebrow="Dự án"
           title="Công trình tiêu biểu"
           desc="Khu vực hiển thị dự án đã thực hiện, giúp tăng độ tin cậy với doanh nghiệp và chủ đầu tư."
+          variant="dark"
         />
 
         <div className="mt-12 grid gap-6 md:grid-cols-3">

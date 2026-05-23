@@ -31,8 +31,11 @@ export default function FloatingContact() {
         className="group relative flex size-12 items-center justify-center rounded-full bg-[#0b4ea2] text-white shadow-lg"
         aria-label="Gọi điện"
       >
-        <span className="absolute inset-0 rounded-full bg-[#0b4ea2] opacity-40 animate-ping" />
-        <Phone className="relative z-10 animate-[phone-shake_1.4s_ease-in-out_infinite]" size={22} />
+        <span className="absolute inset-0 animate-ping rounded-full bg-[#0b4ea2] opacity-40" />
+        <Phone
+          className="relative z-10 animate-[phone-shake_1.4s_ease-in-out_infinite]"
+          size={22}
+        />
       </a>
 
       <a
@@ -42,10 +45,8 @@ export default function FloatingContact() {
         className="group relative flex size-12 items-center justify-center rounded-full bg-[#d7a321] text-xs font-black text-white shadow-lg"
         aria-label="Zalo"
       >
-        <span className="absolute inset-0 rounded-full bg-[#d7a321] opacity-40 animate-ping" />
-        <span className="relative z-10 animate-[phone-shake_1.4s_ease-in-out_infinite]">
-          Zalo
-        </span>
+        <span className="absolute inset-0 animate-ping rounded-full bg-[#d7a321] opacity-40" />
+        <span className="relative z-10 animate-[phone-shake_1.4s_ease-in-out_infinite]">Zalo</span>
       </a>
       <button
         type="button"

@@ -8,26 +8,20 @@ export default function ProductPage() {
   return (
     <>
       <section className="relative overflow-hidden bg-[#071f45] py-24 text-white">
-        <Image
-          src="/images/banner_3.jpg"
-          alt=""
-          fill
-          priority
-          className="object-cover"
-        />
+        <Image src="/images/banner_3.jpg" alt="" fill priority className="object-cover" />
         <div className="absolute inset-0 bg-[#071f45]/88" />
         <div className="absolute inset-0 bg-gradient-to-br from-[#071f45] via-[#0b4ea2]/65 to-[#071f45]" />
         <div className="absolute -right-24 bottom-10 size-80 rounded-full bg-blue-400/10 blur-3xl" />
         <Container className="relative">
           <div className="max-w-4xl">
             <Reveal variant="fade-down">
-              <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#d7a321]">
+              <p className="text-sm font-bold tracking-[0.22em] text-[#d7a321] uppercase">
                 Sản phẩm
               </p>
             </Reveal>
 
             <Reveal variant="blur" delay={100}>
-              <h1 className="mt-4 text-3xl font-black uppercase leading-tight sm:text-4xl lg:text-6xl">
+              <h1 className="mt-4 text-3xl leading-tight font-black uppercase sm:text-4xl lg:text-6xl">
                 Sản phẩm xi măng Nghệ Giang
               </h1>
             </Reveal>

@@ -66,22 +66,22 @@ export default function HeroSlider() {
                 alt={slide.title}
                 fill
                 priority={index === 0}
-                className="object-cover h-full"
+                className="h-full object-cover"
               />
 
               <div className="absolute inset-0 bg-[#071f45]/70" />
               <div className="absolute inset-0 bg-gradient-to-r from-[#071f45] via-[#0b4ea2]/55 to-transparent" />
 
-              <Container className="relative z-10 flex min-h-[320px] md:min-h-[640px] items-center h-full">
+              <Container className="relative z-10 flex h-full min-h-[320px] items-center md:min-h-[640px]">
                 <div className="max-w-3xl">
                   <Reveal variant="fade-up">
-                    <p className="mb-3 text-lg font-bold uppercase tracking-[0.2em] text-[#d7a321] md:mb-4 md:text-sm">
+                    <p className="mb-3 text-lg font-bold tracking-[0.2em] text-[#d7a321] uppercase md:mb-4 md:text-sm">
                       Nghệ Giang
                     </p>
                   </Reveal>
 
                   <Reveal variant="blur" delay={100}>
-                    <h2 className="text-2xl font-black leading-tight text-white sm:text-3xl md:text-4xl lg:text-5xl uppercase">
+                    <h2 className="text-2xl leading-tight font-black text-white uppercase sm:text-3xl md:text-4xl lg:text-5xl">
                       {slide.title}
                     </h2>
                   </Reveal>
@@ -97,8 +97,14 @@ export default function HeroSlider() {
           ))}
         </CarouselContent>
 
-        <CarouselPrevious size="icon-xl" className="left-4 z-20 hidden border-white/30 bg-white/15 text-white backdrop-blur hover:bg-white hover:text-[#0b4ea2] md:flex lg:left-8" />
-        <CarouselNext size="icon-xl" className="right-4 z-20 hidden border-white/30 bg-white/15 text-white backdrop-blur hover:bg-white hover:text-[#0b4ea2] md:flex lg:right-8" />
+        <CarouselPrevious
+          size="icon-xl"
+          className="left-4 z-20 hidden border-white/30 bg-white/15 text-white backdrop-blur hover:bg-white hover:text-[#0b4ea2] md:flex lg:left-8"
+        />
+        <CarouselNext
+          size="icon-xl"
+          className="right-4 z-20 hidden border-white/30 bg-white/15 text-white backdrop-blur hover:bg-white hover:text-[#0b4ea2] md:flex lg:right-8"
+        />
 
         <div className="absolute bottom-5 left-1/2 z-20 flex -translate-x-1/2 items-center gap-3 rounded-full bg-white/15 px-4 py-2 backdrop-blur-md md:bottom-8">
           <div className="flex items-center gap-2">
@@ -112,9 +118,7 @@ export default function HeroSlider() {
                 }}
                 className={cn(
                   "h-2 rounded-full transition-all duration-300",
-                  current === index
-                    ? "w-8 bg-[#d7a321]"
-                    : "w-2 bg-white/60 hover:bg-white",
+                  current === index ? "w-8 bg-[#d7a321]" : "w-2 bg-white/60 hover:bg-white",
                 )}
                 aria-label={`Chuyển đến slide ${index + 1}`}
               />

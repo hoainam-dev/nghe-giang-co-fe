@@ -108,7 +108,7 @@ export default function ProductSection() {
           <Reveal variant="fade-up" delay={200}>
             <div className="mx-auto mt-10 max-w-5xl sm:mt-12">
               <Reveal variant="fade-down">
-                <h3 className="mb-3 text-center text-sm font-bold uppercase tracking-[0.18em] text-[#d7a321] sm:text-base sm:tracking-[0.2em]">
+                <h3 className="mb-3 text-center text-sm font-bold tracking-[0.18em] text-[#d7a321] uppercase sm:text-base sm:tracking-[0.2em]">
                   Các sản phẩm khác
                 </h3>
               </Reveal>

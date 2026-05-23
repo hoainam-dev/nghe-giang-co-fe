@@ -7,12 +7,7 @@ import { CheckCircle2 } from "lucide-react";
 export default function AboutSection() {
   return (
     <section className="relative overflow-hidden bg-white py-20">
-      <Image
-        src="/images/banner_1.jpeg"
-        alt=""
-        fill
-        className="object-cover"
-      />
+      <Image src="/images/banner_1.jpeg" alt="" fill className="object-cover" />
       <div className="absolute inset-0 bg-white/90" />
       <Container className="grid items-center gap-12 lg:grid-cols-1">
         <FadeIn>

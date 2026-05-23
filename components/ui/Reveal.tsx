@@ -66,8 +66,7 @@ export default function Reveal({
     const observer = new IntersectionObserver(
       ([entry]) => {
         const rect = entry.boundingClientRect;
-        const isFullyOut =
-          rect.bottom < -80 || rect.top > window.innerHeight + 80;
+        const isFullyOut = rect.bottom < -80 || rect.top > window.innerHeight + 80;
 
         if (entry.isIntersecting) {
           setVisible(true);

@@ -7,12 +7,19 @@ type SectionTitleProps = {
   title: string;
   desc?: string;
   center?: boolean;
-  variant?: "light" | "dark"
+  variant?: "light" | "dark";
   className?: string;
 };
 
-export default function SectionTitle({ eyebrow, title, desc, center = false, variant = "light", className }: SectionTitleProps) {
-  const isDark = useMemo(() => variant === "dark", [variant])
+export default function SectionTitle({
+  eyebrow,
+  title,
+  desc,
+  center = false,
+  variant = "light",
+  className,
+}: SectionTitleProps) {
+  const isDark = useMemo(() => variant === "dark", [variant]);
   return (
     <div className={cn(center ? "mx-auto max-w-3xl text-center" : "max-w-3xl", className)}>
       {eyebrow && (
@@ -24,18 +31,21 @@ export default function SectionTitle({ eyebrow, title, desc, center = false, var
       )}
 
       <Reveal variant="blur" delay={100}>
-        <h2 className={cn(
-          "text-3xl font-bold tracking-tight md:text-4xl",
-          isDark ? "text-white" : "text-[#0b2f66]"
-        )}>{title}</h2>
+        <h2
+          className={cn(
+            "text-3xl font-bold tracking-tight md:text-4xl",
+            isDark ? "text-white" : "text-[#0b2f66]",
+          )}
+        >
+          {title}
+        </h2>
       </Reveal>
 
       {desc && (
         <Reveal variant="fade-up" delay={180}>
-          <p className={cn(
-            "mt-4 text-base leading-7",
-            isDark ? "text-blue-50" : "text-slate-600"
-          )}>{desc}</p>
+          <p className={cn("mt-4 text-base leading-7", isDark ? "text-blue-50" : "text-slate-600")}>
+            {desc}
+          </p>
         </Reveal>
       )}
     </div>

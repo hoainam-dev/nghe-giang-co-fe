@@ -4,9 +4,14 @@ export const siteConfig = {
   name: "Công ty TNHH TM & TV Nghệ Giang",
   domain: "www.nghegiang.com.vn",
   slogan: "Đồng hành cùng những công trình bền vững",
-  description:
-    "Nghệ Giang cung cấp xi măng cho các công trình tại miền Trung và Tây Nguyên.",
-  keywords: ["Xi măng", "Nghệ Giang", "Xi măng Nghệ Giang", "Xi măng miền Trung", "Xi măng Đà Nẵng"],
+  description: "Nghệ Giang cung cấp xi măng cho các công trình tại miền Trung và Tây Nguyên.",
+  keywords: [
+    "Xi măng",
+    "Nghệ Giang",
+    "Xi măng Nghệ Giang",
+    "Xi măng miền Trung",
+    "Xi măng Đà Nẵng",
+  ],
   phone: "0394.389.999",
   email: "nghegiangdn2006@gmai.com",
   address: "89 Lê Văn Hưu, Phường Ngũ Hành Sơn, TP Đà Nẵng, Việt Nam",

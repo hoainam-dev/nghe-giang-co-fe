@@ -45,29 +45,38 @@ export default function HeroSection() {
         </div>
 
         <Reveal variant="scale-up" delay={260}>
-          <div className="rounded-4xl md:border border-white/15 md:bg-white/10 md:p-5 md:shadow-2xl md:backdrop-blur">
+          <div className="rounded-4xl border-white/15 md:border md:bg-white/10 md:p-5 md:shadow-2xl md:backdrop-blur">
             <div className="grid gap-4 sm:grid-cols-2">
               <Reveal variant="zoom-in" delay={0}>
-                <div className="min-h-[125px] flex flex-col justify-center items-center rounded-3xl bg-white p-4 transition duration-300 hover:-translate-y-1 hover:shadow-xl">
-                  <p className="flex items-center justify-center text-4xl font-black text-[#0b4ea2]">20+</p>
+                <div className="flex min-h-[125px] flex-col items-center justify-center rounded-3xl bg-white p-4 transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+                  <p className="flex items-center justify-center text-4xl font-black text-[#0b4ea2]">
+                    20+
+                  </p>
                   <p className="mt-2 text-sm font-semibold text-slate-600">Năm kinh nghiệm</p>
                 </div>
               </Reveal>
               <Reveal variant="zoom-in" delay={0}>
-                <div className="min-h-[125px] flex flex-col justify-center items-center rounded-3xl bg-white p-4 transition duration-300 hover:-translate-y-1 hover:shadow-xl">
-                  <p className="flex items-center justify-center text-2xl font-black text-[#0b4ea2]">Miền Trung & <br />Tây Nguyên</p>
+                <div className="flex min-h-[125px] flex-col items-center justify-center rounded-3xl bg-white p-4 transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+                  <p className="flex items-center justify-center text-2xl font-black text-[#0b4ea2]">
+                    Miền Trung & <br />
+                    Tây Nguyên
+                  </p>
                   <p className="mt-2 text-sm font-semibold text-slate-600">Khu vực hoạt động</p>
                 </div>
               </Reveal>
               <Reveal variant="zoom-in" delay={0}>
-                <div className="min-h-[125px] flex flex-col justify-center items-center rounded-3xl bg-white p-4 transition duration-300 hover:-translate-y-1 hover:shadow-xl">
-                  <p className="flex items-center justify-center text-3xl font-black text-[#0b4ea2]">Đà Nẵng</p>
+                <div className="flex min-h-[125px] flex-col items-center justify-center rounded-3xl bg-white p-4 transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+                  <p className="flex items-center justify-center text-3xl font-black text-[#0b4ea2]">
+                    Đà Nẵng
+                  </p>
                   <p className="mt-2 text-sm font-semibold text-slate-600">Thị trường trọng điểm</p>
                 </div>
               </Reveal>
               <Reveal variant="zoom-in" delay={0}>
-                <div className="min-h-[125px] flex flex-col justify-center items-center rounded-3xl bg-white p-4 transition duration-300 hover:-translate-y-1 hover:shadow-xl">
-                  <p className="flex items-center justify-center text-3xl font-black text-[#0b4ea2]">24/7</p>
+                <div className="flex min-h-[125px] flex-col items-center justify-center rounded-3xl bg-white p-4 transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+                  <p className="flex items-center justify-center text-3xl font-black text-[#0b4ea2]">
+                    24/7
+                  </p>
                   <p className="mt-2 text-sm font-semibold text-slate-600">Hỗ trợ khách hàng</p>
                 </div>
               </Reveal>

@@ -50,18 +50,18 @@ export default function Header() {
             className="h-[60x] w-[60px] sm:h-[70x] sm:w-[70px]"
           />
           <div>
-            <p className="text-sm sm:text-base font-bold text-[#0b2f66]">{siteConfig.name}</p>
+            <p className="text-sm font-bold text-[#0b2f66] sm:text-base">{siteConfig.name}</p>
           </div>
         </GLink>
 
-        <nav className="hidden items-center lg:gap-6 xl:gap-8 lg:flex">
+        <nav className="hidden items-center lg:flex lg:gap-6 xl:gap-8">
           {navItems.map((item, index) => (
             <GLink
               key={item.href}
               href={item.href}
               style={{ transitionDelay: `${index * 80}ms` }}
               className={cn(
-                "relative text-sm font-semibold text-slate-700 transition-all duration-500 hover:text-[#0b4ea2] uppercase",
+                "relative text-sm font-semibold text-slate-700 uppercase transition-all duration-500 hover:text-[#0b4ea2]",
                 mounted ? "translate-y-0 opacity-100" : "-translate-y-3 opacity-0",
                 "after:absolute after:-bottom-2 after:left-0 after:h-0.5 after:w-0 after:bg-[#d7a321] after:transition-all after:duration-300 hover:after:w-full",
               )}
@@ -89,7 +89,7 @@ export default function Header() {
 
       <div
         className={cn(
-          "absolute left-0 top-full z-50 grid w-full overflow-hidden border-t border-slate-100 bg-white shadow-xl transition-[grid-template-rows,opacity] duration-500 ease-out lg:hidden",
+          "absolute top-full left-0 z-50 grid w-full overflow-hidden border-t border-slate-100 bg-white shadow-xl transition-[grid-template-rows,opacity] duration-500 ease-out lg:hidden",
           open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0",
         )}
       >

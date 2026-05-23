@@ -1,146 +1,161 @@
-// import Image from "next/image";
-// import GLink from "@/components/general/GLink";
-// import { ArrowRight } from "lucide-react";
-// import Container from "@/components/ui/Container";
-// import SectionTitle from "@/components/ui/SectionTitle";
-// import FadeIn from "@/components/ui/FadeIn";
-// import { products } from "@/data/site";
-
-// export default function ProductSection() {
-//   return (
-//     <section className="bg-slate-50 py-20">
-//       <Container>
-//         <SectionTitle
-//           center
-//           eyebrow="Sản phẩm"
-//           title="Danh mục xi măng cho nhiều nhu cầu công trình"
-//           desc="Các sản phẩm được trình bày rõ ràng, dễ xem trên mobile và tối ưu cho SEO từ khóa xi măng, Nghệ Giang, miền Trung."
-//         />
-
-//         <div className="mt-12 grid gap-6 md:grid-cols-3">
-//           {products.map((item) => (
-//             <FadeIn key={item.name}>
-//               <article className="group overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-1 hover:shadow-xl">
-//                 <div className="relative h-64 overflow-hidden">
-//                   <Image
-//                     src={item.image}
-//                     alt={item.name}
-//                     fill
-//                     className="object-cover transition duration-500 group-hover:scale-105"
-//                   />
-//                 </div>
-
-//                 <div className="p-6">
-//                   <h3 className="text-xl font-bold text-[#0b2f66]">{item.name}</h3>
-//                   <p className="mt-3 text-sm leading-6 text-slate-600">{item.desc}</p>
-
-//                   <Link
-//                     href="/san-pham"
-//                     className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-[#0b4ea2]"
-//                   >
-//                     Xem chi tiết <ArrowRight size={16} />
-//                   </Link>
-//                 </div>
-//               </article>
-//             </FadeIn>
-//           ))}
-//         </div>
-//       </Container>
-//     </section>
-//   );
-// }
-
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import Container from "@/components/ui/Container";
+import FeaturedProductCard from "@/components/cards/FeaturedProductCard";
 import SectionTitle from "@/components/ui/SectionTitle";
+import CarouselDots from "@/components/ui/CarouselDots";
+import ProductCard from "@/components/cards/ProductCard";
+import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
-import { products } from "@/data/site";
+import Image from "next/image";
+import type { CarouselApi } from "@/components/ui/carousel";
 import {
-  Carousel,
+  CarouselPrevious,
   CarouselContent,
   CarouselItem,
   CarouselNext,
-  CarouselPrevious,
+  Carousel,
 } from "@/components/ui/carousel";
+import { featuredProducts, productGroups } from "@/data/site";
+import { useEffect, useState } from "react";
 
 export default function ProductSection() {
+  const [featuredApi, setFeaturedApi] = useState<CarouselApi>();
+  const [featuredCurrent, setFeaturedCurrent] = useState(0);
+  const [featuredCount, setFeaturedCount] = useState(0);
+
+  const [productApi, setProductApi] = useState<CarouselApi>();
+  const [productCurrent, setProductCurrent] = useState(0);
+  const [productCount, setProductCount] = useState(0);
+
+  useEffect(() => {
+    if (!featuredApi) return;
+
+    const updateCurrent = () => {
+      setFeaturedCurrent(featuredApi.selectedScrollSnap());
+    };
+
+    setFeaturedCount(featuredApi.scrollSnapList().length);
+    updateCurrent();
+
+    featuredApi.on("select", updateCurrent);
+    featuredApi.on("reInit", updateCurrent);
+
+    return () => {
+      featuredApi.off("select", updateCurrent);
+      featuredApi.off("reInit", updateCurrent);
+    };
+  }, [featuredApi]);
+
+  useEffect(() => {
+    if (!productApi) return;
+
+    const updateCurrent = () => {
+      setProductCurrent(productApi.selectedScrollSnap());
+    };
+
+    setProductCount(productApi.scrollSnapList().length);
+    updateCurrent();
+
+    productApi.on("select", updateCurrent);
+    productApi.on("reInit", updateCurrent);
+
+    return () => {
+      productApi.off("select", updateCurrent);
+      productApi.off("reInit", updateCurrent);
+    };
+  }, [productApi]);
+
   return (
-    <section className="relative overflow-hidden bg-slate-50 py-20">
-      <Image
-        src="/images/product-bg.jpg"
-        alt=""
-        fill
-        className="object-cover"
-      />
-      <div className="absolute inset-0 bg-slate-50/90" />
+    <section id="danh-sach">
+      <div className="relative overflow-hidden bg-slate-50 py-12 sm:py-16 lg:py-20">
+        <div className="absolute inset-0 bg-slate-50/90" />
 
-      <Container className="relative">
-        <SectionTitle
-          eyebrow="Sản phẩm"
-          title="Danh mục xi măng cho nhiều nhu cầu công trình"
-          desc="Hiển thị dạng carousel preview 3 sản phẩm trên desktop, phù hợp trang chủ doanh nghiệp."
-        />
+        <Container className="relative w-full">
+          <SectionTitle center eyebrow="Sản phẩm" title="Sản phẩm tiêu biểu" />
 
-        <Reveal variant="fade-up" delay={160}>
-          <Carousel
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-            className="mt-12"
-          >
-            <CarouselContent className="-ml-4 py-2">
-              {products.map((item) => (
-                <CarouselItem
-                  key={item.slug}
-                  className="pl-4 md:basis-1/2 lg:basis-1/3"
+          <Reveal variant="fade-up" delay={120}>
+            <div className="relative mx-auto mt-6 max-w-5xl">
+              <Carousel
+                setApi={setFeaturedApi}
+                opts={{
+                  align: "center",
+                  loop: true,
+                }}
+                className="w-full"
+              >
+                <CarouselContent className="-ml-4 py-3">
+                  {featuredProducts.map((item) => (
+                    <CarouselItem key={item.slug} className="pl-4 md:basis-1/2">
+                      <FeaturedProductCard item={item} />
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+              </Carousel>
+
+              <CarouselDots
+                count={featuredCount}
+                current={featuredCurrent}
+                onSelect={(index) => featuredApi?.scrollTo(index)}
+                className="mt-4"
+              />
+            </div>
+          </Reveal>
+
+          <Reveal variant="fade-up" delay={200}>
+            <div className="mt-10 h-px w-full bg-black/10" />
+          </Reveal>
+
+          <Reveal variant="fade-up" delay={200}>
+            <div className="mx-auto mt-10 max-w-5xl sm:mt-12">
+              <Reveal variant="fade-down">
+                <h3 className="mb-3 text-center text-sm font-bold uppercase tracking-[0.18em] text-[#d7a321] sm:text-base sm:tracking-[0.2em]">
+                  Các sản phẩm khác
+                </h3>
+              </Reveal>
+
+              <div className="relative">
+                <Carousel
+                  setApi={setProductApi}
+                  opts={{
+                    align: "start",
+                  }}
+                  className="w-full"
                 >
-                  <article className="group h-full overflow-hidden rounded-[1.5rem] bg-white shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-1 hover:shadow-xl">
-                    <div className="relative flex justify-center overflow-hidden">
-                      <Image
-                        src={item.image}
-                        alt={item.name}
-                        width={200}
-                        height={200}
-                        className="object-cover transition duration-500 group-hover:scale-105"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 transition group-hover:opacity-100" />
-                    </div>
-
-                    <div className="p-6">
-                      <p className="mb-2 text-xs font-bold uppercase tracking-[0.18em] text-[#d7a321]">
-                        Nghệ Giang
-                      </p>
-
-                      <h3 className="text-xl font-bold text-[#0b2f66]">
-                        {item.name}
-                      </h3>
-
-                      <p className="mt-3 text-sm leading-6 text-slate-600">
-                        {item.desc}
-                      </p>
-
-                      <Link
-                        href={`/san-pham/${item.slug}`}
-                        className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-[#0b4ea2]"
+                  <CarouselContent className="-ml-4 py-3">
+                    {productGroups.map((item) => (
+                      <CarouselItem
+                        key={item.slug}
+                        className="basis-full pl-4 sm:basis-1/2 lg:basis-1/3"
                       >
-                        Xem chi tiết <ArrowRight size={16} />
-                      </Link>
-                    </div>
-                  </article>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
+                        <div className="mx-auto max-w-[360px] sm:mx-px">
+                          <ProductCard item={item} />
+                        </div>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
 
-            <CarouselPrevious className="-left-4 border-slate-200 bg-white text-[#0b4ea2] hover:bg-[#0b4ea2] hover:text-white md:-left-6" />
-            <CarouselNext className="-right-4 border-slate-200 bg-white text-[#0b4ea2] hover:bg-[#0b4ea2] hover:text-white md:-right-6" />
-          </Carousel>
-        </Reveal>
-      </Container>
+                  <CarouselPrevious
+                    size="icon-xl"
+                    className="left-2 z-20 hidden border-[#0b4ea2]/20 bg-white/90 text-[#0b4ea2] shadow-md backdrop-blur hover:bg-[#0b4ea2] hover:text-white md:flex lg:-left-14"
+                  />
+
+                  <CarouselNext
+                    size="icon-xl"
+                    className="right-2 z-20 hidden border-[#0b4ea2]/20 bg-white/90 text-[#0b4ea2] shadow-md backdrop-blur hover:bg-[#0b4ea2] hover:text-white md:flex lg:-right-14"
+                  />
+                </Carousel>
+
+                <CarouselDots
+                  count={productCount}
+                  current={productCurrent}
+                  onSelect={(index) => productApi?.scrollTo(index)}
+                  className="mt-4"
+                />
+              </div>
+            </div>
+          </Reveal>
+        </Container>
+      </div>
     </section>
   );
 }

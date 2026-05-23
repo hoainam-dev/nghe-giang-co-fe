@@ -6,30 +6,19 @@ import { CheckCircle2 } from "lucide-react";
 
 export default function AboutSection() {
   return (
-    <section className="bg-white py-20">
-      <Container className="grid items-center gap-12 lg:grid-cols-2">
-        <FadeIn>
-          <div className="relative overflow-hidden rounded-4xl">
-            <Image
-              src="/images/mock_company.jpg"
-              alt="Nhà máy xi măng"
-              width={760}
-              height={560}
-              className="h-[460px] w-full object-cover"
-            />
-            <div className="absolute bottom-5 left-5 rounded-2xl bg-white/95 p-5 shadow-xl">
-              <p className="text-2xl font-black text-[#0b4ea2]">Nghệ Giang</p>
-              <p className="text-sm font-semibold text-slate-600">
-                Uy tín - Chất lượng - Đồng hành
-              </p>
-            </div>
-          </div>
-        </FadeIn>
-
+    <section className="relative overflow-hidden bg-white py-20">
+      <Image
+        src="/images/banner_1.jpeg"
+        alt=""
+        fill
+        className="object-cover"
+      />
+      <div className="absolute inset-0 bg-white/90" />
+      <Container className="grid items-center gap-12 lg:grid-cols-1">
         <FadeIn>
           <SectionTitle
             eyebrow="Về chúng tôi"
-            title="Đơn vị cung cấp xi măng và giải pháp vật liệu xây dựng tại miền Trung"
+            title="Đơn vị phân phối xi măng chuyên nghiệp tại miền Trung và Tây Nguyên"
             desc="Nghệ Giang hướng đến hình ảnh doanh nghiệp chuyên nghiệp, thân thiện, đồng hành cùng chủ đầu tư, nhà thầu và các công trình dân dụng - công nghiệp."
           />
 
@@ -37,7 +26,7 @@ export default function AboutSection() {
             {[
               "Tập trung vào chất lượng sản phẩm và tiến độ giao hàng.",
               "Phục vụ doanh nghiệp, chủ đầu tư và khách hàng trẻ.",
-              "Định hướng xây dựng thương hiệu uy tín tại Đà Nẵng và miền Trung.",
+              "Định hướng xây dựng thương hiệu uy tín tại miền Trung và Tây Nguyên.",
             ].map((item) => (
               <div key={item} className="flex gap-3">
                 <CheckCircle2 className="mt-1 text-[#d7a321]" size={22} />

@@ -20,7 +20,7 @@ export default function CTASection() {
             </div>
 
             <GLink
-              href="#lien-he"
+              href="/lien-he"
               className="inline-flex rounded-full bg-[#d7a321] px-7 py-4 text-sm font-bold text-white"
             >
               Nhận tư vấn

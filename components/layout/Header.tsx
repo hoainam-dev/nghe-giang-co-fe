@@ -4,6 +4,7 @@ import GLink from "@/components/general/GLink";
 import { navItems, siteConfig } from "@/data/site";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { GImage } from "@/components/general/GImage";
 import { cn } from "@/lib/utils";
 
 export default function Header() {
@@ -40,23 +41,27 @@ export default function Header() {
       )}
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <GLink href="/" className="group flex items-center gap-3">
-          <div className="flex size-11 items-center justify-center rounded-xl bg-[#0b4ea2] text-lg font-black text-white transition duration-300 group-hover:scale-105 group-hover:rotate-3">
-            NG
-          </div>
+        <GLink href="/" className="group flex items-center gap-1 xl:gap-3">
+          <GImage
+            width={70}
+            height={70}
+            alt="Logo"
+            src="/images/logo.png"
+            className="h-[60x] w-[60px] sm:h-[70x] sm:w-[70px]"
+          />
           <div>
-            <p className="text-base font-bold text-[#0b2f66]">{siteConfig.name}</p>
+            <p className="text-sm sm:text-base font-bold text-[#0b2f66]">{siteConfig.name}</p>
           </div>
         </GLink>
 
-        <nav className="hidden items-center gap-8 lg:flex">
+        <nav className="hidden items-center lg:gap-6 xl:gap-8 lg:flex">
           {navItems.map((item, index) => (
             <GLink
               key={item.href}
               href={item.href}
               style={{ transitionDelay: `${index * 80}ms` }}
               className={cn(
-                "relative text-sm font-semibold text-slate-700 transition-all duration-500 hover:text-[#0b4ea2]",
+                "relative text-sm font-semibold text-slate-700 transition-all duration-500 hover:text-[#0b4ea2] uppercase",
                 mounted ? "translate-y-0 opacity-100" : "-translate-y-3 opacity-0",
                 "after:absolute after:-bottom-2 after:left-0 after:h-0.5 after:w-0 after:bg-[#d7a321] after:transition-all after:duration-300 hover:after:w-full",
               )}

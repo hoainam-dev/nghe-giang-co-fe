@@ -28,7 +28,11 @@ const items = [
 
 export default function ServiceSection() {
   return (
-    <section className="bg-white py-20">
+    <section className="relative overflow-hidden bg-white py-20">
+      <div className="absolute inset-0 opacity-[0.35] [background-image:linear-gradient(rgba(11,78,162,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(11,78,162,0.08)_1px,transparent_1px)] [background-size:44px_44px]" />
+      <div className="absolute -right-24 bottom-10 size-80 rounded-full bg-[#0b4ea2]/15 blur-3xl" />
+      <div className="absolute left-6 top-10 hidden h-24 w-24 rounded-[2rem] border border-[#d7a321]/25 lg:block" />
+      <div className="absolute bottom-12 right-8 hidden h-32 w-32 rounded-full border border-[#0b4ea2]/20 lg:block" />
       <Container>
         <SectionTitle
           eyebrow="Dịch vụ"

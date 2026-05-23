@@ -40,32 +40,37 @@ export default function HeroSection() {
               >
                 Xem sản phẩm <ArrowRight size={18} />
               </GLink>
-              <GLink
-                href="#lien-he"
-                className="inline-flex items-center justify-center rounded-full border border-white/30 px-7 py-4 text-sm font-bold text-white transition hover:-translate-y-1 hover:bg-white hover:text-[#0b2f66]"
-              >
-                Liên hệ tư vấn
-              </GLink>
             </div>
           </Reveal>
         </div>
 
         <Reveal variant="scale-up" delay={260}>
-          <div className="rounded-4xl border border-white/15 bg-white/10 p-5 shadow-2xl backdrop-blur">
+          <div className="rounded-4xl md:border border-white/15 md:bg-white/10 md:p-5 md:shadow-2xl md:backdrop-blur">
             <div className="grid gap-4 sm:grid-cols-2">
-              {[
-                ["10+", "Năm kinh nghiệm"],
-                ["Miền Trung", "Khu vực hoạt động"],
-                ["Đà Nẵng", "Thị trường trọng điểm"],
-                ["24/7", "Hỗ trợ khách hàng"],
-              ].map(([value, label], index) => (
-                <Reveal key={label} variant="zoom-in" delay={index * 100}>
-                  <div className="rounded-3xl bg-white p-6 transition duration-300 hover:-translate-y-1 hover:shadow-xl">
-                    <p className="text-3xl font-black text-[#0b4ea2]">{value}</p>
-                    <p className="mt-2 text-sm font-semibold text-slate-600">{label}</p>
-                  </div>
-                </Reveal>
-              ))}
+              <Reveal variant="zoom-in" delay={0}>
+                <div className="min-h-[125px] flex flex-col justify-center items-center rounded-3xl bg-white p-4 transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+                  <p className="flex items-center justify-center text-4xl font-black text-[#0b4ea2]">20+</p>
+                  <p className="mt-2 text-sm font-semibold text-slate-600">Năm kinh nghiệm</p>
+                </div>
+              </Reveal>
+              <Reveal variant="zoom-in" delay={0}>
+                <div className="min-h-[125px] flex flex-col justify-center items-center rounded-3xl bg-white p-4 transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+                  <p className="flex items-center justify-center text-2xl font-black text-[#0b4ea2]">Miền Trung & <br />Tây Nguyên</p>
+                  <p className="mt-2 text-sm font-semibold text-slate-600">Khu vực hoạt động</p>
+                </div>
+              </Reveal>
+              <Reveal variant="zoom-in" delay={0}>
+                <div className="min-h-[125px] flex flex-col justify-center items-center rounded-3xl bg-white p-4 transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+                  <p className="flex items-center justify-center text-3xl font-black text-[#0b4ea2]">Đà Nẵng</p>
+                  <p className="mt-2 text-sm font-semibold text-slate-600">Thị trường trọng điểm</p>
+                </div>
+              </Reveal>
+              <Reveal variant="zoom-in" delay={0}>
+                <div className="min-h-[125px] flex flex-col justify-center items-center rounded-3xl bg-white p-4 transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+                  <p className="flex items-center justify-center text-3xl font-black text-[#0b4ea2]">24/7</p>
+                  <p className="mt-2 text-sm font-semibold text-slate-600">Hỗ trợ khách hàng</p>
+                </div>
+              </Reveal>
             </div>
           </div>
         </Reveal>

@@ -4,10 +4,9 @@ export default function StatsSection() {
   return (
     <section className="bg-[#0b4ea2] py-12">
       <Container>
-        <div className="grid gap-6 text-center text-white md:grid-cols-4">
+        <div className="grid gap-6 text-center text-white md:grid-cols-3">
           {[
-            ["10+", "Năm kinh nghiệm"],
-            ["100+", "Khách hàng & đối tác"],
+            ["20+", "Năm kinh nghiệm"],
             ["Miền Trung", "Khu vực trọng điểm"],
             ["24/7", "Hỗ trợ tư vấn"],
           ].map(([value, label]) => (

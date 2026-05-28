@@ -1,23 +1,16 @@
 import ProductDetailHeader from "@/components/sections/product/ProductDetailHeader";
+import ProductInfoListItem from "@/components/cards/ProductInfoListItem";
+import ProductInfoListCard from "@/components/cards/ProductInfoListCard";
+import ProductInfoCard from "@/components/cards/PorductInfoCard";
 import CTASection from "@/components/sections/CTASection";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
+import GLink from "@/components/general/GLink";
 import Image from "next/image";
-import {
-  CheckCircle2,
-  PackageCheck,
-  ShieldCheck,
-  BadgeCheck,
-  ArrowLeft,
-  Boxes,
-} from "lucide-react";
+import { PackageCheck, ShieldCheck, BadgeCheck, ArrowLeft, Boxes } from "lucide-react";
 import { pcbCommonInfo, productDetails } from "@/data/site";
 import { notFound } from "next/navigation";
 import { cn } from "@/lib/utils";
-import ProductInfoCard from "@/components/cards/PorductInfoCard";
-import ProductInfoListItem from "@/components/cards/ProductInfoListItem";
-import ProductInfoListCard from "@/components/cards/ProductInfoListCard";
-import GLink from "@/components/general/GLink";
 
 type ProductDetailPageProps = {
   params: Promise<{
@@ -61,7 +54,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
             <Reveal variant="fade-right">
               <GLink
                 href="/san-pham#danh-sach"
-                className="mb-6 inline-flex items-center gap-2 text-xs font-bold text-[#0b2f66] sm:mb-8 sm:text-sm"
+                className="mb-6 inline-flex items-center gap-2 text-xs font-medium text-brand-navy transition hover:text-brand-blue sm:mb-8 sm:text-sm"
               >
                 <ArrowLeft size={18} />
                 Quay lại sản phẩm
@@ -130,15 +123,15 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
 
                 {product.usage.mixRatio && (
                   <Reveal variant="fade-up">
-                    <div className="overflow-hidden rounded-[1.25rem] border border-slate-200 bg-white shadow-sm sm:rounded-[2rem]">
-                      <div className="border-b border-slate-200 bg-[#0b4ea2] p-4 text-white sm:p-6">
+                    <div className="overflow-hidden rounded-[1.25rem] border border-border bg-white shadow-sm sm:rounded-[2rem]">
+                      <div className="border-b border-border bg-brand-blue p-4 text-white sm:p-6">
                         <div className="flex items-start gap-3 sm:items-center">
                           <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-white/15 sm:size-12">
                             <Boxes size={22} />
                           </div>
 
                           <div className="min-w-0">
-                            <p className="text-xs font-bold tracking-[0.14em] text-[#d7a321] uppercase sm:text-sm sm:tracking-[0.18em]">
+                            <p className="eyebrow text-[0.6875rem]! sm:text-xs!">
                               Tỷ lệ cấp phối
                             </p>
                             <h3 className="mt-1 text-lg leading-snug font-black sm:text-2xl">
@@ -152,17 +145,17 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
                         <div className="overflow-x-auto">
                           <table className="w-full min-w-[680px] border-collapse text-left">
                             <thead>
-                              <tr className="bg-slate-50 text-sm text-[#0b2f66] uppercase">
-                                <th className="border-b border-slate-200 px-5 py-4 font-black">
+                              <tr className="bg-surface text-sm text-brand-navy uppercase">
+                                <th className="border-b border-border px-5 py-4 font-black">
                                   Vật liệu
                                 </th>
-                                <th className="border-b border-slate-200 px-5 py-4 font-black">
+                                <th className="border-b border-border px-5 py-4 font-black">
                                   Đơn vị
                                 </th>
-                                <th className="border-b border-slate-200 px-5 py-4 font-black">
+                                <th className="border-b border-border px-5 py-4 font-black">
                                   Bê tông mác 250
                                 </th>
-                                <th className="border-b border-slate-200 px-5 py-4 font-black">
+                                <th className="border-b border-border px-5 py-4 font-black">
                                   Vữa xây mác 100
                                 </th>
                               </tr>
@@ -170,17 +163,17 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
 
                             <tbody>
                               {product.usage.mixRatio.map((row) => (
-                                <tr key={row.material} className="hover:bg-slate-50">
-                                  <td className="border-b border-slate-100 px-5 py-4 font-bold text-[#0b2f66]">
+                                <tr key={row.material} className="hover:bg-surface">
+                                  <td className="border-b border-slate-100 px-5 py-4 font-bold text-brand-navy">
                                     {row.material}
                                   </td>
-                                  <td className="border-b border-slate-100 px-5 py-4 text-slate-600">
+                                  <td className="border-b border-slate-100 px-5 py-4 text-brand-text-muted">
                                     {row.unit}
                                   </td>
-                                  <td className="border-b border-slate-100 px-5 py-4 font-semibold text-slate-700">
+                                  <td className="border-b border-slate-100 px-5 py-4 font-bold text-brand-text">
                                     {row.concrete250}
                                   </td>
-                                  <td className="border-b border-slate-100 px-5 py-4 font-semibold text-slate-700">
+                                  <td className="border-b border-slate-100 px-5 py-4 font-bold text-brand-text">
                                     {row.mortar100}
                                   </td>
                                 </tr>
@@ -194,25 +187,25 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
                         {product.usage.mixRatio.map((row) => (
                           <div key={row.material} className="p-4">
                             <div className="mb-3 flex items-center justify-between gap-3">
-                              <p className="font-black text-[#0b2f66]">{row.material}</p>
-                              <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-600">
+                              <p className="font-bold text-brand-navy">{row.material}</p>
+                              <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-brand-text-muted">
                                 {row.unit}
                               </span>
                             </div>
 
                             <div className="grid gap-2 text-sm">
-                              <div className="rounded-xl bg-slate-50 p-3">
-                                <p className="text-xs font-bold tracking-[0.12em] text-slate-500 uppercase">
+                              <div className="rounded-xl bg-surface p-3">
+                                <p className="text-xs font-bold tracking-[0.12em] text-brand-text-muted uppercase">
                                   Bê tông mác 250
                                 </p>
-                                <p className="mt-1 font-bold text-slate-800">{row.concrete250}</p>
+                                <p className="mt-1 font-bold text-brand-text">{row.concrete250}</p>
                               </div>
 
-                              <div className="rounded-xl bg-slate-50 p-3">
-                                <p className="text-xs font-bold tracking-[0.12em] text-slate-500 uppercase">
+                              <div className="rounded-xl bg-surface p-3">
+                                <p className="text-xs font-bold tracking-[0.12em] text-brand-text-muted uppercase">
                                   Vữa xây mác 100
                                 </p>
-                                <p className="mt-1 font-bold text-slate-800">{row.mortar100}</p>
+                                <p className="mt-1 font-bold text-brand-text">{row.mortar100}</p>
                               </div>
                             </div>
                           </div>
@@ -250,7 +243,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
                       icon={<BadgeCheck size={22} />}
                       eyebrow="Thông tin chung"
                       title={pcbCommonInfo.title}
-                      iconClassName="bg-[#d7a321]/15 text-[#d7a321]"
+                      iconClassName="bg-brand-gold/15 text-brand-gold"
                     >
                       <div className="space-y-3">
                         {pcbCommonInfo.desc.map((item) => (

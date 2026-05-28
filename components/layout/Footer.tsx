@@ -3,37 +3,42 @@ import { siteConfig } from "@/data/site";
 
 export default function Footer() {
   return (
-    <footer id="lien-he" className="bg-[#071f45] text-white">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-3 lg:px-8">
+    <footer id="lien-he" className="relative bg-brand-navy-dark text-white">
+      <div className="gold-accent-line" />
+
+      <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 md:grid-cols-3 lg:px-8">
         <div>
-          <h3 className="text-xl font-bold">{siteConfig.name}</h3>
-          <p className="mt-4 text-sm leading-6 text-blue-100">{siteConfig.description}</p>
+          <h3 className="font-heading text-xl font-bold tracking-tight">{siteConfig.name}</h3>
+          <p className="mt-5 text-sm leading-7 font-medium text-brand-muted/80">{siteConfig.description}</p>
         </div>
 
         <div>
-          <h4 className="font-bold">Liên hệ</h4>
-          <div className="mt-4 space-y-3 text-sm text-blue-100">
-            <p className="flex gap-2">
-              <Phone size={18} /> {siteConfig.phone}
+          <h4 className="eyebrow mb-5 text-[0.6875rem]! text-brand-gold-light!">Liên hệ</h4>
+          <div className="space-y-4 text-sm font-medium text-brand-muted/80">
+            <p className="flex items-start gap-3">
+              <Phone size={17} className="mt-0.5 shrink-0 text-brand-gold" />
+              {siteConfig.phone}
             </p>
-            <p className="flex gap-2">
-              <Mail size={18} /> {siteConfig.email}
+            <p className="flex items-start gap-3">
+              <Mail size={17} className="mt-0.5 shrink-0 text-brand-gold" />
+              {siteConfig.email}
             </p>
-            <p className="flex gap-2">
-              <MapPin size={18} /> {siteConfig.address}
+            <p className="flex items-start gap-3">
+              <MapPin size={17} className="mt-0.5 shrink-0 text-brand-gold" />
+              {siteConfig.address}
             </p>
           </div>
         </div>
 
         <div>
-          <h4 className="font-bold">Khu vực hoạt động</h4>
-          <p className="mt-4 text-sm leading-6 text-blue-100">
+          <h4 className="eyebrow mb-5 text-[0.6875rem]! text-brand-gold-light!">Khu vực hoạt động</h4>
+          <p className="text-sm leading-7 font-medium text-brand-muted/80">
             Miền Trung, TP Đà Nẵng và các khu vực lân cận.
           </p>
         </div>
       </div>
 
-      <div className="border-t border-white/10 py-5 text-center text-sm text-blue-100">
+      <div className="border-t border-white/8 py-6 text-center text-xs font-medium tracking-wide text-brand-muted/60">
         © 2026 {siteConfig.name}. All rights reserved.
       </div>
     </footer>

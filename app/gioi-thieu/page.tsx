@@ -1,38 +1,39 @@
 import VisionMissionSection from "@/components/sections/about/VisionMissionSection";
-import OrganizationSection from "@/components/sections/about/OrganizationSection";
 import CompanyInfoSection from "@/components/sections/about/CompanyInfoSection";
 import ThankYouSection from "@/components/sections/about/ThankYouSection";
 import AboutSection from "@/components/sections/AboutSection";
 import CTASection from "@/components/sections/CTASection";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
+import Image from "next/image";
 
 export default function AboutPage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-[#071f45] py-16 text-white md:py-24">
-        <div className="absolute inset-0 bg-[url('/images/about-hero.jpg')] bg-cover bg-center" />
-        <div className="absolute inset-0 bg-[#071f45]/85" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#071f45] via-[#0b4ea2]/60 to-transparent" />
+      <section className="bg-brand-navy-dark relative overflow-hidden py-16 text-white md:py-24">
+        <Image src="/images/banner_3.jpg" alt="" fill priority className="object-cover" />
+        <div className="page-hero-overlay absolute inset-0" />
 
         <Container className="relative">
           <Reveal variant="fade-down">
-            <p className="text-sm font-bold tracking-[0.2em] text-[#d7a321] uppercase">
-              Giới thiệu
-            </p>
+            <p className="eyebrow">Giới thiệu</p>
           </Reveal>
 
           <Reveal variant="blur" delay={100}>
-            <h1 className="mt-4 max-w-5xl text-3xl leading-tight font-black md:text-5xl">
+            <h1 className="heading-display mt-5 max-w-5xl text-3xl text-white md:text-5xl">
               Công ty TNHH TM & TV Nghệ Giang
             </h1>
           </Reveal>
 
           <Reveal variant="fade-up" delay={200}>
-            <p className="mt-5 max-w-3xl text-base leading-7 text-blue-50 md:mt-6 md:text-lg md:leading-8">
+            <p className="mt-6 max-w-3xl text-base leading-8 font-medium text-brand-muted/90 md:text-lg">
               Đơn vị phân phối xi măng chuyên nghiệp, đồng hành cùng các công trình tại miền Trung
               và Tây Nguyên.
             </p>
+          </Reveal>
+
+          <Reveal variant="fade-up" delay={280}>
+            <div className="bg-brand-gold/40 mt-8 h-px w-20" />
           </Reveal>
         </Container>
       </section>
@@ -40,7 +41,6 @@ export default function AboutPage() {
       <AboutSection />
       <CompanyInfoSection />
       <VisionMissionSection />
-      <OrganizationSection />
       <ThankYouSection />
       <CTASection />
     </>

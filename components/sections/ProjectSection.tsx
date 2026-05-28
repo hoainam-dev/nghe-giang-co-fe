@@ -6,8 +6,9 @@ import { projects } from "@/data/site";
 
 export default function ProjectSection() {
   return (
-    <section className="bg-[#071f45] py-20 text-white">
-      <Container>
+    <section className="relative overflow-hidden bg-brand-navy-dark py-20 text-white">
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(12,90,158,0.15)_0%,transparent_50%)]" />
+      <Container className="relative">
         <SectionTitle
           center
           eyebrow="Dự án"
@@ -16,23 +17,22 @@ export default function ProjectSection() {
           variant="dark"
         />
 
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <div className="mt-14 grid gap-6 md:grid-cols-3">
           {projects.map((item) => (
             <FadeIn key={item.title}>
-              <article className="group overflow-hidden rounded-3xl bg-white/10 ring-1 ring-white/15">
-                <div className="relative h-72 overflow-hidden">
+              <article className="group card-glass overflow-hidden">
+                <div className="relative h-64 overflow-hidden">
                   <Image
                     src={item.image}
                     alt={item.title}
                     fill
-                    className="object-cover transition duration-500 group-hover:scale-105"
+                    className="object-cover transition duration-700 group-hover:scale-105"
                   />
+                  <div className="absolute inset-0 bg-linear-to-t from-brand-navy-dark/80 via-transparent to-transparent" />
                 </div>
                 <div className="p-6">
-                  <p className="text-sm font-bold tracking-widest text-[#d7a321] uppercase">
-                    {item.category}
-                  </p>
-                  <h3 className="mt-2 text-xl font-bold">{item.title}</h3>
+                  <p className="eyebrow text-[0.6875rem]!">{item.category}</p>
+                  <h3 className="mt-2 font-heading text-xl font-bold">{item.title}</h3>
                 </div>
               </article>
             </FadeIn>

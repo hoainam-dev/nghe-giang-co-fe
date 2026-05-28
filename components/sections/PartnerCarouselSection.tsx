@@ -1,15 +1,15 @@
 "use client";
 
-import Image from "next/image";
-import Autoplay from "embla-carousel-autoplay";
-import { useEffect, useRef, useState } from "react";
-import Container from "@/components/ui/Container";
-import Reveal from "@/components/ui/Reveal";
 import SectionTitle from "@/components/ui/SectionTitle";
-import { cn } from "@/lib/utils";
+import Container from "@/components/ui/Container";
+import Autoplay from "embla-carousel-autoplay";
+import Reveal from "@/components/ui/Reveal";
+import Image from "next/image";
 import type { CarouselApi } from "@/components/ui/carousel";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import { useEffect, useRef, useState } from "react";
 import { partners } from "@/data/site";
+import { cn } from "@/lib/utils";
 
 export default function PartnerCarouselSection() {
   const [api, setApi] = useState<CarouselApi>();
@@ -47,8 +47,8 @@ export default function PartnerCarouselSection() {
 
   return (
     <section className="relative overflow-hidden bg-white py-14 sm:py-16 lg:py-20">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_18%,rgba(215,163,33,0.12),transparent_28%),radial-gradient(circle_at_88%_18%,rgba(11,78,162,0.1),transparent_30%)]" />
-      <div className="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-[#0b4ea2] via-[#d7a321] to-[#0b4ea2]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_18%,rgba(173,139,85,0.05),transparent_28%),radial-gradient(circle_at_88%_18%,rgba(47,84,114,0.04),transparent_30%)]" />
+      <div className="gold-accent-line absolute top-0 left-0" />
 
       <Container className="relative">
         <SectionTitle
@@ -79,7 +79,7 @@ export default function PartnerCarouselSection() {
                       href={partner.website}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex h-28 items-center justify-center rounded-[1.25rem] border border-slate-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-[#d7a321]/60 hover:shadow-xl sm:h-32"
+                      className="group card-elevated flex h-28 items-center justify-center p-5 sm:h-32"
                       aria-label={`Xem website ${partner.name}`}
                     >
                       <Image
@@ -87,7 +87,7 @@ export default function PartnerCarouselSection() {
                         alt={partner.name}
                         width={180}
                         height={90}
-                        className="max-h-24 w-auto max-w-full object-contain transition duration-300 group-hover:grayscale-0"
+                        className="max-h-20 w-auto max-w-full object-contain opacity-80 transition duration-300 group-hover:opacity-100"
                       />
                     </a>
                   </CarouselItem>
@@ -123,15 +123,15 @@ function PartnerDots({
 
   return (
     <div className="mt-4 flex items-center justify-center gap-3">
-      <div className="flex items-center gap-2 rounded-full bg-white/85 px-4 py-2 shadow-sm ring-1 ring-slate-200 backdrop-blur">
+      <div className="flex items-center gap-2 rounded-full bg-white/90 px-4 py-2 shadow-[0_2px_12px_rgba(10,31,61,0.06)] ring-1 ring-border/60 backdrop-blur">
         {Array.from({ length: count }).map((_, index) => (
           <button
             key={index}
             type="button"
             onClick={() => onSelect(index)}
             className={cn(
-              "h-2 rounded-full transition-all duration-300",
-              current === index ? "w-8 bg-[#d7a321]" : "w-2 bg-[#0b4ea2]/35 hover:bg-[#0b4ea2]",
+              "h-1.5 rounded-full transition-all duration-300",
+              current === index ? "w-7 bg-brand-gold" : "w-1.5 bg-brand-blue/30 hover:bg-brand-blue/60",
             )}
             aria-label={`Chuyển đến nhóm đối tác ${index + 1}`}
           />

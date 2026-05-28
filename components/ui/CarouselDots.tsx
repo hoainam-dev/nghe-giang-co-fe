@@ -12,15 +12,15 @@ export default function CarouselDots({ count, current, onSelect, className }: Ca
 
   return (
     <div className={cn("flex items-center justify-center gap-3", className)}>
-      <div className="flex items-center gap-2 rounded-full bg-white/80 px-4 py-2 shadow-sm ring-1 ring-slate-200 backdrop-blur">
+      <div className="flex items-center gap-2 rounded-full bg-white/90 px-4 py-2 shadow-[0_2px_12px_rgba(10,31,61,0.06)] ring-1 ring-border/60 backdrop-blur">
         {Array.from({ length: count }).map((_, index) => (
           <button
             key={index}
             type="button"
             onClick={() => onSelect(index)}
             className={cn(
-              "h-2 rounded-full transition-all duration-300",
-              current === index ? "w-8 bg-[#d7a321]" : "w-2 bg-[#0b4ea2]/35 hover:bg-[#0b4ea2]",
+              "h-1.5 rounded-full transition-all duration-300",
+              current === index ? "w-7 bg-brand-gold" : "w-1.5 bg-brand-blue/30 hover:bg-brand-blue/60",
             )}
             aria-label={`Chuyển đến sản phẩm ${index + 1}`}
           />

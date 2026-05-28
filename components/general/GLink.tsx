@@ -13,7 +13,7 @@ export default function GLink({
   return (
     <Link
       className={cn(
-        "inline-flex items-center justify-center text-center text-[16px] leading-6 font-medium tracking-[0.15px] text-white",
+        "inline-flex items-center justify-center text-center text-[16px] leading-6 font-semibold tracking-[0.15px] text-white",
         className,
       )}
       {...props}

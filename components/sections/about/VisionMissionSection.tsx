@@ -23,11 +23,9 @@ const visionMissionItems = [
 export default function VisionMissionSection() {
   return (
     <>
-      <section className="relative overflow-hidden bg-[#071f45] py-14 text-white sm:py-16 lg:py-20">
-        <Image src="/images/banner_2.jpeg" alt="" fill className="object-cover" />
-        <div className="absolute inset-0 bg-[#071f45]/72" />
-        <div className="absolute inset-0 bg-gradient-to-br from-[#071f45] via-[#0b4ea2]/70 to-[#071f45]" />
-        <div className="absolute -right-24 bottom-10 size-80 rounded-full bg-blue-400/10 blur-3xl" />
+      <section className="relative overflow-hidden bg-brand-navy-mid py-14 text-white sm:py-16 lg:py-20">
+        <Image src="/images/banner_2.jpeg" alt="" fill className="object-cover opacity-55" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(21,30,44,0.58)_0%,rgba(30,42,58,0.65)_100%)]" />
 
         <Container className="relative">
           <SectionTitle
@@ -37,31 +35,31 @@ export default function VisionMissionSection() {
             variant="dark"
           />
 
-          <div className="mt-8 grid gap-5 lg:mt-12 lg:grid-cols-2">
+          <div className="mt-10 grid gap-5 lg:mt-12 lg:grid-cols-2">
             {visionMissionItems.map((item, index) => {
               const Icon = item.icon;
 
               return (
                 <Reveal key={item.title} variant="fade-up" delay={index * 100}>
-                  <div className="group relative h-full overflow-hidden rounded-[1.75rem] border border-white/15 bg-white/[0.08] p-6 shadow-2xl backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:bg-white/[0.12] sm:p-8">
-                    <div className="absolute top-5 right-5 text-6xl leading-none font-black text-white/[0.06] sm:text-7xl">
+                  <div className="group relative h-full overflow-hidden rounded-[1.25rem] border border-white/16 bg-white/10 p-7 backdrop-blur-md transition duration-300 hover:bg-white/14 sm:p-8">
+                    <div className="absolute top-5 right-5 font-heading text-6xl leading-none font-bold text-white/5 sm:text-7xl">
                       {item.index}
                     </div>
 
                     <div className="relative">
                       <div className="mb-7 flex items-center justify-between gap-4">
-                        <div className="flex size-14 items-center justify-center rounded-2xl bg-[#d7a321] text-white shadow-lg shadow-[#d7a321]/20">
-                          <Icon size={28} />
+                        <div className="flex size-14 items-center justify-center rounded-2xl bg-brand-blue text-white shadow-[0_4px_16px_rgba(13,21,32,0.2)]">
+                          <Icon size={26} />
                         </div>
 
-                        <div className="h-px flex-1 bg-gradient-to-r from-[#d7a321]/70 to-transparent" />
+                        <div className="h-px flex-1 bg-linear-to-r from-brand-gold/40 to-transparent" />
                       </div>
 
-                      <h3 className="text-2xl font-black tracking-wide text-[#d7a321] uppercase sm:text-3xl">
+                      <h3 className="font-heading text-2xl font-bold text-brand-gold-light sm:text-3xl">
                         {item.title}
                       </h3>
 
-                      <p className="mt-4 text-sm leading-7 text-blue-50 sm:text-base sm:leading-8">
+                      <p className="mt-4 text-sm leading-7 font-medium text-white/85 sm:text-base sm:leading-8">
                         {item.desc}
                       </p>
                     </div>

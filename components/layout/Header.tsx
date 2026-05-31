@@ -73,7 +73,7 @@ export default function Header() {
           ))}
         </nav>
 
-        <GLink href="/lien-he" className="btn-gold hidden px-5! py-2.5! text-[0.8125rem]! lg:inline-flex">
+        <GLink href="/lien-he" className="btn-gold hidden! px-5! py-2.5! text-[0.8125rem]! lg:inline-flex">
           Liên hệ tư vấn
         </GLink>
 

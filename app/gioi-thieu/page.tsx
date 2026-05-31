@@ -10,9 +10,10 @@ import Image from "next/image";
 export default function AboutPage() {
   return (
     <>
-      <section className="bg-brand-navy-dark relative overflow-hidden py-16 text-white md:py-24">
+      <section className="relative overflow-hidden bg-[#071f45] py-16 text-white md:py-24">
         <Image src="/images/banner_3.jpg" alt="" fill priority className="object-cover" />
-        <div className="page-hero-overlay absolute inset-0" />
+        <div className="absolute inset-0 bg-[#071f45]/75" />
+        <div className="absolute inset-0 bg-linear-to-r from-[#071f45] via-[#0b4ea2]/60 to-transparent" />
 
         <Container className="relative">
           <Reveal variant="fade-down">
@@ -26,7 +27,7 @@ export default function AboutPage() {
           </Reveal>
 
           <Reveal variant="fade-up" delay={200}>
-            <p className="mt-6 max-w-3xl text-base leading-8 font-medium text-brand-muted/90 md:text-lg">
+            <p className="font-heading text-brand-muted/90 mt-6 max-w-2xl text-sm leading-7 font-medium sm:text-[17px] lg:leading-8">
               Đơn vị phân phối xi măng chuyên nghiệp, đồng hành cùng các công trình tại miền Trung
               và Tây Nguyên.
             </p>

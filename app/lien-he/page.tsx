@@ -43,9 +43,10 @@ const contactCards = [
 export default function ContactPage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-brand-navy-dark py-16 text-white sm:py-20 lg:py-24">
+      <section className="relative overflow-hidden bg-[#071f45] py-16 text-white md:py-24">
         <Image src="/images/banner_3.jpg" alt="" fill priority className="object-cover" />
-        <div className="page-hero-overlay absolute inset-0" />
+        <div className="absolute inset-0 bg-[#071f45]/75" />
+        <div className="absolute inset-0 bg-linear-to-r from-[#071f45] via-[#0b4ea2]/60 to-transparent" />
 
         <Container className="relative">
           <div className="max-w-4xl">
@@ -60,7 +61,7 @@ export default function ContactPage() {
             </Reveal>
 
             <Reveal variant="fade-up" delay={200}>
-              <p className="mt-6 max-w-2xl text-sm leading-7 font-medium text-brand-muted/90 sm:text-base lg:text-lg lg:leading-8">
+            <p className="font-heading mt-6 max-w-2xl text-sm leading-7 font-medium text-brand-muted/90 sm:text-[17px] lg:leading-8">
                 Đội ngũ Nghệ Giang luôn sẵn sàng hỗ trợ khách hàng, nhà thầu và đại lý trong việc
                 lựa chọn sản phẩm, báo giá và phương án vận chuyển phù hợp.
               </p>
@@ -69,7 +70,10 @@ export default function ContactPage() {
         </Container>
       </section>
 
-      <section className="relative overflow-hidden section-muted py-14 sm:py-16 lg:py-20">
+      <section
+        id="contact"
+        className="section-muted relative overflow-hidden py-14 sm:py-16 lg:py-20"
+      >
         <Container className="relative">
           <SectionTitle
             eyebrow="Thông tin liên hệ"
@@ -82,20 +86,24 @@ export default function ContactPage() {
               const Icon = item.icon;
               const content = (
                 <div className="group card-elevated relative h-full overflow-hidden p-6">
-                  <div className="absolute -top-10 -right-10 size-28 rounded-full bg-brand-blue/5 transition duration-300 group-hover:bg-brand-gold/10" />
+                  <div className="bg-brand-blue/5 group-hover:bg-brand-gold/10 absolute -top-10 -right-10 size-28 rounded-full transition duration-300" />
 
                   <div className="relative">
                     <div className="icon-badge mb-5 size-12">
                       <Icon size={23} />
                     </div>
 
-                    <h3 className="font-heading text-base font-bold text-brand-navy">{item.title}</h3>
+                    <h3 className="font-heading text-brand-navy text-base font-bold">
+                      {item.title}
+                    </h3>
 
-                    <p className="mt-2 text-sm leading-6 font-medium wrap-break-word text-brand-text">
+                    <p className="text-brand-text mt-2 text-sm leading-6 font-medium wrap-break-word">
                       {item.value}
                     </p>
 
-                    <p className="mt-2 text-sm leading-6 font-medium text-brand-text-muted">{item.desc}</p>
+                    <p className="text-brand-text-muted mt-2 text-sm leading-6 font-medium">
+                      {item.desc}
+                    </p>
                   </div>
                 </div>
               );

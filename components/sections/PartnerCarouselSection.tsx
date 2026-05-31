@@ -7,7 +7,7 @@ import Reveal from "@/components/ui/Reveal";
 import Image from "next/image";
 import type { CarouselApi } from "@/components/ui/carousel";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { partners } from "@/data/site";
 import { cn } from "@/lib/utils";
 
@@ -16,12 +16,14 @@ export default function PartnerCarouselSection() {
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
 
-  const autoplayRef = useRef(
-    Autoplay({
-      delay: 2000,
-      stopOnMouseEnter: true,
-      stopOnInteraction: false,
-    }),
+  const autoplay = useMemo(
+    () =>
+      Autoplay({
+        delay: 2000,
+        stopOnMouseEnter: true,
+        stopOnInteraction: false,
+      }),
+    [],
   );
 
   useEffect(() => {
@@ -66,7 +68,7 @@ export default function PartnerCarouselSection() {
                 align: "start",
                 loop: true,
               }}
-              plugins={[autoplayRef.current]}
+              plugins={[autoplay]}
               className="w-full"
             >
               <CarouselContent className="-ml-4 py-4">
@@ -100,7 +102,7 @@ export default function PartnerCarouselSection() {
               current={current}
               onSelect={(index) => {
                 api?.scrollTo(index);
-                autoplayRef.current.reset();
+                autoplay.reset();
               }}
             />
           </div>

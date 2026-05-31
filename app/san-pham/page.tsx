@@ -7,9 +7,10 @@ import Image from "next/image";
 export default function ProductPage() {
   return (
     <>
-      <section className="bg-brand-navy-dark relative overflow-hidden py-24 text-white">
+      <section className="relative overflow-hidden bg-[#071f45] py-16 text-white md:py-24">
         <Image src="/images/banner_3.jpg" alt="" fill priority className="object-cover" />
-        <div className="page-hero-overlay absolute inset-0" />
+        <div className="absolute inset-0 bg-[#071f45]/75" />
+        <div className="absolute inset-0 bg-linear-to-r from-[#071f45] via-[#0b4ea2]/60 to-transparent" />
 
         <Container className="relative">
           <div className="max-w-4xl">
@@ -24,7 +25,7 @@ export default function ProductPage() {
             </Reveal>
 
             <Reveal variant="fade-up" delay={200}>
-              <p className="mt-6 max-w-2xl text-sm leading-7 font-medium text-brand-muted/90 sm:text-base lg:text-lg lg:leading-8">
+            <p className="font-heading mt-6 max-w-2xl text-sm leading-7 font-medium text-brand-muted/90 sm:text-[17px] lg:leading-8">
                 Danh mục sản phẩm phục vụ công trình dân dụng, công nghiệp và hạ tầng.
               </p>
             </Reveal>

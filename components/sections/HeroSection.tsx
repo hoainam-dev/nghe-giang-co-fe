@@ -6,26 +6,27 @@ import { siteConfig } from "@/data/site";
 
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-brand-navy-mid">
-      <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(21,30,44,0.68)_0%,rgba(47,84,114,0.38)_55%,rgba(21,30,44,0.58)_100%),url('/images/hero-cement.jpg')] bg-cover bg-center" />
+    <section className="relative overflow-hidden bg-[#071f45]">
+      <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(11,78,162,0.95),rgba(7,31,69,0.9)),url('/images/hero-cement.jpg')] bg-cover bg-center" />
+      <div className="absolute -bottom-24 -left-24 size-80 rounded-full bg-blue-400/20 blur-3xl" />
 
       <Container className="relative grid min-h-[680px] items-center gap-12 py-20 lg:grid-cols-[1.1fr_0.9fr]">
         <div>
           <Reveal variant="fade-down">
-            <div className="mb-7 inline-flex items-center gap-2.5 rounded-full border border-white/18 bg-white/10 px-5 py-2.5 text-sm font-medium text-white backdrop-blur-sm">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-white ring-1 ring-white/20">
               <ShieldCheck size={17} className="text-brand-gold-light" />
               Vật liệu bền vững cho công trình miền Trung
             </div>
           </Reveal>
 
           <Reveal variant="blur" delay={120}>
-            <h1 className="heading-display max-w-4xl text-4xl text-white md:text-5xl lg:text-[3.5rem]">
+            <h1 className="heading-display max-w-4xl text-4xl text-white md:text-5xl lg:text-[3.5rem] uppercase">
               {siteConfig.name}
             </h1>
           </Reveal>
 
           <Reveal variant="fade-up" delay={220}>
-            <p className="mt-6 max-w-2xl text-base leading-8 font-medium text-white/85 md:text-lg">
+            <p className="font-heading mt-6 max-w-2xl text-base leading-8 font-medium text-white/85 md:text-lg">
               {siteConfig.description}
             </p>
           </Reveal>
@@ -51,11 +52,11 @@ export default function HeroSection() {
                 <Reveal key={stat.label} variant="zoom-in" delay={0}>
                   <div className="card-elevated flex min-h-[120px] flex-col items-center justify-center p-5 text-center">
                     <p
-                      className={`font-heading font-bold text-brand-blue whitespace-pre-line ${stat.size}`}
+                      className={`font-heading font-bold text-[#0b4ea2] whitespace-pre-line ${stat.size}`}
                     >
                       {stat.value}
                     </p>
-                    <p className="mt-2 text-xs font-medium tracking-wide text-brand-text-muted">{stat.label}</p>
+                    <p className="mt-2 text-sm font-medium tracking-wide text-brand-text-muted">{stat.label}</p>
                   </div>
                 </Reveal>
               ))}

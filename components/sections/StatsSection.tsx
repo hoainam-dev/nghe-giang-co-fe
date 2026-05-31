@@ -2,7 +2,7 @@ import Container from "@/components/ui/Container";
 
 export default function StatsSection() {
   return (
-    <section className="relative overflow-hidden bg-brand-navy-mid py-14">
+    <section className="bg-[#0b4ea2] py-12">
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.03)_0%,transparent_100%)]" />
       <Container>
         <div className="relative grid gap-8 text-center text-white md:grid-cols-3">

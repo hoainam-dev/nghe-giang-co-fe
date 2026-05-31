@@ -3,9 +3,7 @@ import { siteConfig } from "@/data/site";
 
 export default function Footer() {
   return (
-    <footer id="lien-he" className="relative bg-brand-navy-dark text-white">
-      <div className="gold-accent-line" />
-
+    <footer id="lien-he" className="bg-[#071f45] text-white">
       <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 md:grid-cols-3 lg:px-8">
         <div>
           <h3 className="font-heading text-xl font-bold tracking-tight">{siteConfig.name}</h3>

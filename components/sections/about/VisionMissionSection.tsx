@@ -23,9 +23,11 @@ const visionMissionItems = [
 export default function VisionMissionSection() {
   return (
     <>
-      <section className="relative overflow-hidden bg-brand-navy-mid py-14 text-white sm:py-16 lg:py-20">
-        <Image src="/images/banner_2.jpeg" alt="" fill className="object-cover opacity-55" />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(21,30,44,0.58)_0%,rgba(30,42,58,0.65)_100%)]" />
+      <section className="relative overflow-hidden bg-[#071f45] py-14 text-white sm:py-16 lg:py-20">
+        <Image src="/images/banner_2.jpeg" alt="" fill className="object-cover" />
+        <div className="absolute inset-0 bg-[#071f45]/72" />
+        <div className="absolute inset-0 bg-linear-to-br from-[#071f45] via-[#0b4ea2]/70 to-[#071f45]" />
+        <div className="absolute -right-24 bottom-10 size-80 rounded-full bg-blue-400/10 blur-3xl" />
 
         <Container className="relative">
           <SectionTitle
@@ -48,7 +50,7 @@ export default function VisionMissionSection() {
 
                     <div className="relative">
                       <div className="mb-7 flex items-center justify-between gap-4">
-                        <div className="flex size-14 items-center justify-center rounded-2xl bg-brand-blue text-white shadow-[0_4px_16px_rgba(13,21,32,0.2)]">
+                        <div className="flex size-14 items-center justify-center rounded-2xl bg-brand-gold text-white shadow-[0_4px_16px_rgba(13,21,32,0.2)]">
                           <Icon size={26} />
                         </div>
 

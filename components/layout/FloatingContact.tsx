@@ -1,7 +1,7 @@
 "use client";
 
-import { ArrowUp, MessageCircle, Phone } from "lucide-react";
 import { useEffect, useState } from "react";
+import { ArrowUp, Phone } from "lucide-react";
 
 export default function FloatingContact() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -28,13 +28,13 @@ export default function FloatingContact() {
     <div className="fixed right-4 bottom-4 z-50 flex flex-col gap-3 sm:right-5 sm:bottom-5">
       <a
         href="tel:0394389999"
-        className="group relative flex size-12 items-center justify-center rounded-full bg-[#0b4ea2] text-white shadow-lg"
+        className="group relative flex size-12 items-center justify-center rounded-full bg-brand-blue text-white shadow-[0_4px_16px_rgba(13,21,32,0.2)] transition hover:-translate-y-0.5 hover:shadow-[0_6px_24px_rgba(13,21,32,0.28)]"
         aria-label="Gọi điện"
       >
-        <span className="absolute inset-0 animate-ping rounded-full bg-[#0b4ea2] opacity-40" />
+        <span className="absolute inset-0 animate-ping rounded-full bg-brand-blue opacity-30" />
         <Phone
           className="relative z-10 animate-[phone-shake_1.4s_ease-in-out_infinite]"
-          size={22}
+          size={21}
         />
       </a>
 
@@ -42,20 +42,23 @@ export default function FloatingContact() {
         href="https://zalo.me/0394389999"
         target="_blank"
         rel="noopener noreferrer"
-        className="group relative flex size-12 items-center justify-center rounded-full bg-[#d7a321] text-xs font-black text-white shadow-lg"
+        className="group relative flex size-12 items-center justify-center rounded-full bg-brand-gold text-xs font-bold text-white shadow-[0_4px_16px_rgba(13,21,32,0.18)] transition hover:-translate-y-0.5"
         aria-label="Zalo"
       >
-        <span className="absolute inset-0 animate-ping rounded-full bg-[#d7a321] opacity-40" />
+        <span className="absolute inset-0 animate-ping rounded-full bg-brand-gold opacity-30" />
         <span className="relative z-10 animate-[phone-shake_1.4s_ease-in-out_infinite]">Zalo</span>
       </a>
-      <button
-        type="button"
-        onClick={handleScrollTop}
-        className="flex size-12 items-center justify-center rounded-full bg-white text-[#0b4ea2] shadow-lg ring-1 ring-slate-200 transition hover:-translate-y-1 hover:bg-slate-50"
-        aria-label="Cuộn lên đầu trang"
-      >
-        <ArrowUp size={22} />
-      </button>
+
+      {showScrollTop && (
+        <button
+          type="button"
+          onClick={handleScrollTop}
+          className="flex size-12 items-center justify-center rounded-full bg-white text-brand-blue shadow-[0_4px_16px_rgba(10,31,61,0.1)] ring-1 ring-border/80 transition hover:-translate-y-0.5 hover:bg-surface"
+          aria-label="Cuộn lên đầu trang"
+        >
+          <ArrowUp size={21} />
+        </button>
+      )}
 
       <style jsx>{`
         @keyframes phone-shake {

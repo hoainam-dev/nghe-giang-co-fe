@@ -15,18 +15,18 @@ export default function FeaturedProductCard({ item }: FeaturedProductCardProps) 
   return (
     <article
       onClick={() => setFlipped((v) => !v)}
-      className="group relative mx-0.5 h-full cursor-pointer overflow-hidden rounded-[2rem] transition duration-500 hover:-translate-y-1"
+      className="group relative mx-0.5 h-full cursor-pointer overflow-hidden rounded-3xl transition duration-500 hover:-translate-y-1"
     >
       <div className="flex min-h-[360px] flex-col items-center justify-center">
-        <div className="relative h-[185px] w-[300px] [perspective:1000px] min-[430px]:h-[230px] min-[430px]:w-[350px]">
+        <div className="relative h-[185px] w-[300px] perspective-[1000px] min-[430px]:h-[230px] min-[430px]:w-[350px]">
           <div
             className={cn(
-              "relative size-full transition-transform duration-1000 ease-in-out [transform-style:preserve-3d]",
-              "md:group-hover:[transform:rotateY(180deg)]",
-              flipped && "[transform:rotateY(180deg)]",
+              "relative size-full transition-transform duration-1000 ease-in-out transform-3d",
+              "md:group-hover:transform-[rotateY(180deg)]",
+              flipped && "transform-[rotateY(180deg)]",
             )}
           >
-            <div className="absolute inset-0 flex items-center justify-center transition-transform duration-700 [backface-visibility:hidden] group-hover:scale-105">
+            <div className="absolute inset-0 flex items-center justify-center transition-transform duration-700 backface-hidden group-hover:scale-105">
               <GImage
                 src={item.frontImage}
                 alt={`${item.name} mặt trước`}
@@ -36,7 +36,7 @@ export default function FeaturedProductCard({ item }: FeaturedProductCardProps) 
               />
             </div>
 
-            <div className="absolute inset-0 flex [transform:rotateY(180deg)] items-center justify-center transition-transform duration-700 [backface-visibility:hidden] group-hover:scale-105">
+            <div className="absolute inset-0 flex transform-[rotateY(180deg)] items-center justify-center transition-transform duration-700 backface-hidden group-hover:scale-105">
               <GImage
                 src={item.backImage}
                 alt={`${item.name} mặt sau`}
@@ -50,10 +50,10 @@ export default function FeaturedProductCard({ item }: FeaturedProductCardProps) 
 
         <GLink href={`/san-pham/${item.slug}#chi-tiet`} onClick={(e) => e.stopPropagation()}>
           <div className="mt-6 text-center">
-            <h3 className="mt-2 text-2xl font-black text-[#0b2f66]">{item.name}</h3>
+            <h3 className="font-heading mt-2 text-2xl font-bold text-brand-navy">{item.name}</h3>
 
-            <div className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#0b4ea2] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#083b7a]">
-              Xem chi tiết <ArrowRight size={16} />
+            <div className="btn-gold mt-5 px-5! py-2.5! text-sm!">
+              Xem chi tiết <ArrowRight size={15} />
             </div>
           </div>
         </GLink>

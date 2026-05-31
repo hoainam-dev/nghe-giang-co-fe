@@ -23,12 +23,9 @@ const valueIcons = {
 
 export default function CoreValuesSection() {
   return (
-    <section className="relative overflow-hidden bg-[#f5f8fc] py-14 sm:py-16 lg:py-20">
-      <div className="absolute inset-0 [background-image:linear-gradient(rgba(11,78,162,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(11,78,162,0.08)_1px,transparent_1px)] [background-size:44px_44px] opacity-[0.35]" />
-      <div className="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-[#0b4ea2] via-[#d7a321] to-[#0b4ea2]" />
-      <div className="absolute -right-24 bottom-10 size-80 rounded-full bg-[#0b4ea2]/15 blur-3xl" />
-      <div className="absolute top-10 left-6 hidden h-24 w-24 rounded-[2rem] border border-[#d7a321]/25 lg:block" />
-      <div className="absolute right-8 bottom-12 hidden h-32 w-32 rounded-full border border-[#0b4ea2]/20 lg:block" />
+    <section className="relative overflow-hidden section-muted py-14 sm:py-16 lg:py-20">
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(47,84,114,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(47,84,114,0.035)_1px,transparent_1px)] bg-size-[48px_48px]" />
+      <div className="gold-accent-line absolute top-0 left-0" />
 
       <Container className="relative">
         <SectionTitle
@@ -37,29 +34,29 @@ export default function CoreValuesSection() {
           desc="Mỗi giá trị là một nguyên tắc vận hành, giúp Nghệ Giang xây dựng quan hệ bền vững với khách hàng, đối tác và đội ngũ."
         />
 
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:mt-12 lg:grid-cols-3">
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:mt-12 lg:grid-cols-3">
           {coreValues.map((item, index) => {
             const Icon = valueIcons[item.title as keyof typeof valueIcons] ?? Sparkles;
 
             return (
               <Reveal key={item.title} variant="zoom-in" delay={index * 60}>
-                <div className="group relative h-full overflow-hidden rounded-[1.5rem] border border-white/80 bg-white/85 p-5 shadow-[0_18px_45px_rgba(15,23,42,0.08)] backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:border-[#d7a321]/60 hover:bg-white hover:shadow-[0_24px_60px_rgba(15,23,42,0.14)] sm:p-6">
-                  <div className="absolute -top-10 -right-10 size-28 rounded-full bg-[#0b4ea2]/7 transition duration-300 group-hover:bg-[#d7a321]/15" />
+                <div className="group card-elevated relative h-full overflow-hidden p-6">
+                  <div className="absolute -top-10 -right-10 size-28 rounded-full bg-brand-blue/5 transition duration-300 group-hover:bg-brand-gold/10" />
 
                   <div className="relative">
                     <div className="mb-5 flex items-center justify-between gap-4">
-                      <div className="flex size-12 items-center justify-center rounded-2xl bg-[#0b4ea2]/10 text-[#0b4ea2] shadow-inner transition duration-300 group-hover:bg-[#d7a321] group-hover:text-white">
-                        <Icon size={24} />
+                      <div className="icon-badge size-12">
+                        <Icon size={23} />
                       </div>
 
-                      <span className="text-sm font-black text-[#0b4ea2]/15 transition duration-300 group-hover:text-[#d7a321]/40">
+                      <span className="font-heading text-sm font-bold text-brand-blue/15 transition duration-300 group-hover:text-brand-gold/40">
                         {String(index + 1).padStart(2, "0")}
                       </span>
                     </div>
 
-                    <h4 className="text-lg font-black text-[#0b2f66] uppercase">{item.title}</h4>
+                    <h4 className="font-heading text-xl font-bold text-brand-navy">{item.title}</h4>
 
-                    <p className="mt-3 text-sm leading-7 text-slate-600">{item.desc}</p>
+                    <p className="mt-3 text-sm leading-7 font-medium text-brand-text-muted">{item.desc}</p>
                   </div>
                 </div>
               </Reveal>

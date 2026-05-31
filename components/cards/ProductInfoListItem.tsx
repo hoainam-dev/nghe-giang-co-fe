@@ -13,10 +13,10 @@ export default function ProductInfoListItem({ item, iconTone }: ProductInfoListI
         size={18}
         className={cn(
           "mt-1 shrink-0 sm:size-5",
-          iconTone === "gold" ? "text-[#d7a321]" : "text-[#0b4ea2]",
+          iconTone === "gold" ? "text-brand-gold" : "text-brand-blue",
         )}
       />
-      <p className="text-sm leading-7 text-slate-700 sm:text-base">{item}</p>
+      <p className="text-sm leading-7 text-brand-text sm:text-base">{item}</p>
     </div>
   );
 }

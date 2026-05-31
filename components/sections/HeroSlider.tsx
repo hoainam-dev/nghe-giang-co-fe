@@ -1,19 +1,19 @@
 "use client";
 
-import Image from "next/image";
-import Autoplay from "embla-carousel-autoplay";
-import { useRef, useState } from "react";
 import Container from "@/components/ui/Container";
+import Autoplay from "embla-carousel-autoplay";
 import Reveal from "@/components/ui/Reveal";
-import { cn } from "@/lib/utils";
+import Image from "next/image";
 import type { CarouselApi } from "@/components/ui/carousel";
 import {
-  Carousel,
+  CarouselPrevious,
   CarouselContent,
   CarouselItem,
   CarouselNext,
-  CarouselPrevious,
+  Carousel,
 } from "@/components/ui/carousel";
+import { useMemo, useState } from "react";
+import { cn } from "@/lib/utils";
 
 const slides = [
   {
@@ -32,12 +32,14 @@ export default function HeroSlider() {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
 
-  const autoplayRef = useRef(
-    Autoplay({
-      delay: 4500,
-      stopOnMouseEnter: true,
-      stopOnInteraction: false,
-    }),
+  const autoplay = useMemo(
+    () =>
+      Autoplay({
+        delay: 4500,
+        stopOnMouseEnter: true,
+        stopOnInteraction: false,
+      }),
+    [],
   );
 
   return (
@@ -55,8 +57,8 @@ export default function HeroSlider() {
           align: "start",
           loop: true,
         }}
-        plugins={[autoplayRef.current]}
-        className="h-full min-h-[320px] w-full lg:h-[calc(100vh-80px)] lg:min-h-[640px]"
+        plugins={[autoplay]}
+        className="h-full min-h-[360px] w-full lg:h-[calc(100vh-4.5rem)] lg:min-h-[640px]"
       >
         <CarouselContent className="h-full">
           {slides.map((slide, index) => (
@@ -69,27 +71,29 @@ export default function HeroSlider() {
                 className="h-full object-cover"
               />
 
-              <div className="absolute inset-0 bg-[#071f45]/70" />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#071f45] via-[#0b4ea2]/55 to-transparent" />
+              <div className="absolute inset-0 bg-[#071f45]/75" />
+              <div className="absolute inset-0 bg-linear-to-r from-[#071f45] via-[#0b4ea2]/55 to-transparent" />
 
-              <Container className="relative z-10 flex h-full min-h-[320px] items-center md:min-h-[640px]">
+              <Container className="relative z-10 flex h-full min-h-[360px] items-center md:min-h-[640px]">
                 <div className="max-w-3xl">
                   <Reveal variant="fade-up">
-                    <p className="mb-3 text-lg font-bold tracking-[0.2em] text-[#d7a321] uppercase md:mb-4 md:text-sm">
-                      Nghệ Giang
-                    </p>
+                    <p className="eyebrow mb-5 md:mb-6">Nghệ Giang</p>
                   </Reveal>
 
                   <Reveal variant="blur" delay={100}>
-                    <h2 className="text-2xl leading-tight font-black text-white uppercase sm:text-3xl md:text-4xl lg:text-5xl">
+                    <h2 className="heading-display text-3xl text-white sm:text-4xl md:text-5xl lg:text-[3.25rem] uppercase">
                       {slide.title}
                     </h2>
                   </Reveal>
 
                   <Reveal variant="fade-up" delay={200}>
-                    <p className="mt-4 max-w-2xl text-sm leading-6 text-blue-50 md:mt-6 md:text-lg md:leading-8">
+                    <p className="font-heading text-brand-muted/90 mt-5 max-w-2xl text-sm leading-7 font-medium md:mt-7 md:text-lg md:leading-8">
                       {slide.desc}
                     </p>
+                  </Reveal>
+
+                  <Reveal variant="fade-up" delay={300}>
+                    <div className="bg-brand-gold/40 mt-8 h-px w-20" />
                   </Reveal>
                 </div>
               </Container>
@@ -99,14 +103,14 @@ export default function HeroSlider() {
 
         <CarouselPrevious
           size="icon-xl"
-          className="left-4 z-20 hidden border-white/30 bg-white/15 text-white backdrop-blur hover:bg-white hover:text-[#0b4ea2] md:flex lg:left-8"
+          className="hover:text-brand-blue left-4 z-20 hidden border-white/20 bg-white/10 text-white backdrop-blur-md transition hover:border-white/40 hover:bg-white md:flex lg:left-8"
         />
         <CarouselNext
           size="icon-xl"
-          className="right-4 z-20 hidden border-white/30 bg-white/15 text-white backdrop-blur hover:bg-white hover:text-[#0b4ea2] md:flex lg:right-8"
+          className="hover:text-brand-blue right-4 z-20 hidden border-white/20 bg-white/10 text-white backdrop-blur-md transition hover:border-white/40 hover:bg-white md:flex lg:right-8"
         />
 
-        <div className="absolute bottom-5 left-1/2 z-20 flex -translate-x-1/2 items-center gap-3 rounded-full bg-white/15 px-4 py-2 backdrop-blur-md md:bottom-8">
+        <div className="absolute bottom-6 left-1/2 z-20 flex -translate-x-1/2 items-center gap-3 rounded-full border border-white/10 bg-white/10 px-4 py-2 backdrop-blur-md md:bottom-10">
           <div className="flex items-center gap-2">
             {slides.map((slide, index) => (
               <button
@@ -114,11 +118,11 @@ export default function HeroSlider() {
                 type="button"
                 onClick={() => {
                   api?.scrollTo(index);
-                  autoplayRef.current.reset();
+                  autoplay.reset();
                 }}
                 className={cn(
-                  "h-2 rounded-full transition-all duration-300",
-                  current === index ? "w-8 bg-[#d7a321]" : "w-2 bg-white/60 hover:bg-white",
+                  "h-1.5 rounded-full transition-all duration-300",
+                  current === index ? "bg-brand-gold w-7" : "w-1.5 bg-white/50 hover:bg-white/80",
                 )}
                 aria-label={`Chuyển đến slide ${index + 1}`}
               />

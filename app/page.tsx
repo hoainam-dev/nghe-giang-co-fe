@@ -1,7 +1,6 @@
 import ProductSection from "@/components/sections/ProductSection";
 import ServiceSection from "@/components/sections/ServiceSection";
 import ProjectSection from "@/components/sections/ProjectSection";
-import AboutSection from "@/components/sections/AboutSection";
 import StatsSection from "@/components/sections/StatsSection";
 import HeroSection from "@/components/sections/HeroSection";
 import CTASection from "@/components/sections/CTASection";

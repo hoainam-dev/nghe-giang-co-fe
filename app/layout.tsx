@@ -3,11 +3,22 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { siteConfig } from "@/data/site";
 import type { Metadata } from "next";
+import { Be_Vietnam_Pro, Lora } from "next/font/google";
 import "./globals.css";
-import { Geist } from "next/font/google";
-import { cn } from "@/lib/utils";
 
-const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
+const beVietnamPro = Be_Vietnam_Pro({
+  subsets: ["latin", "vietnamese"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  variable: "--font-body",
+  display: "swap",
+});
+
+const lora = Lora({
+  subsets: ["latin", "vietnamese"],
+  weight: ["500", "600", "700"],
+  variable: "--font-heading",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -24,8 +35,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="vi" className={cn("font-sans", geist.variable)}>
-      <body>
+    <html lang="vi">
+      <body className={`${beVietnamPro.variable} ${lora.variable}`}>
         <Header />
         <main>{children}</main>
         <Footer />

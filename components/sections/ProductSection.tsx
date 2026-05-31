@@ -6,7 +6,6 @@ import CarouselDots from "@/components/ui/CarouselDots";
 import ProductCard from "@/components/cards/ProductCard";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
-import Image from "next/image";
 import type { CarouselApi } from "@/components/ui/carousel";
 import {
   CarouselPrevious,
@@ -67,8 +66,8 @@ export default function ProductSection() {
 
   return (
     <section id="danh-sach">
-      <div className="relative overflow-hidden bg-slate-50 py-12 sm:py-16 lg:py-20">
-        <div className="absolute inset-0 bg-slate-50/90" />
+      <div className="relative overflow-hidden section-muted py-12 sm:py-16 lg:py-20">
+        <div className="absolute inset-0 bg-surface/90" />
 
         <Container className="relative w-full">
           <SectionTitle center eyebrow="Sản phẩm" title="Sản phẩm tiêu biểu" />
@@ -102,13 +101,13 @@ export default function ProductSection() {
           </Reveal>
 
           <Reveal variant="fade-up" delay={200}>
-            <div className="mt-10 h-px w-full bg-black/10" />
+            <div className="section-divider mt-10 w-full" />
           </Reveal>
 
           <Reveal variant="fade-up" delay={200}>
             <div className="mx-auto mt-10 max-w-5xl sm:mt-12">
               <Reveal variant="fade-down">
-                <h3 className="mb-3 text-center text-sm font-bold tracking-[0.18em] text-[#d7a321] uppercase sm:text-base sm:tracking-[0.2em]">
+                <h3 className="eyebrow mb-5 text-center">
                   Các sản phẩm khác
                 </h3>
               </Reveal>
@@ -136,12 +135,12 @@ export default function ProductSection() {
 
                   <CarouselPrevious
                     size="icon-xl"
-                    className="left-2 z-20 hidden border-[#0b4ea2]/20 bg-white/90 text-[#0b4ea2] shadow-md backdrop-blur hover:bg-[#0b4ea2] hover:text-white md:flex lg:-left-14"
+                    className="left-2 z-20 hidden border-brand-blue/20 bg-white/95 text-brand-blue shadow-[0_4px_16px_rgba(10,31,61,0.08)] backdrop-blur hover:bg-brand-blue hover:text-white md:flex lg:-left-14"
                   />
 
                   <CarouselNext
                     size="icon-xl"
-                    className="right-2 z-20 hidden border-[#0b4ea2]/20 bg-white/90 text-[#0b4ea2] shadow-md backdrop-blur hover:bg-[#0b4ea2] hover:text-white md:flex lg:-right-14"
+                    className="right-2 z-20 hidden border-brand-blue/20 bg-white/95 text-brand-blue shadow-[0_4px_16px_rgba(10,31,61,0.08)] backdrop-blur hover:bg-brand-blue hover:text-white md:flex lg:-right-14"
                   />
                 </Carousel>
 

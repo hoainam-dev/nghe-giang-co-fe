@@ -123,7 +123,7 @@ export const productGroups = [
   {
     slug: "xi-mang-hai-van-pcb30",
     name: "Xi măng Hải Vân PCB30",
-    image: "/images/products/HV_PCB40.png",
+    image: "/images/products/HV_PCB30.png",
   },
   {
     slug: "xi-mang-hai-van-pcb40",
@@ -193,8 +193,8 @@ export const productDetails: ProductDetail[] = [
     slug: "xi-mang-hai-van-pcb30",
     name: "Xi măng Hải Vân PCB30",
     brand: "Xi măng Hải Vân",
-    image: "/images/products/HV_PCB40.png",
-    frontImage: "/images/products/HV_PCB40.png",
+    image: "/images/products/HV_PCB30.png",
+    frontImage: "/images/products/HV_PCB30.png",
     desc: "Sản phẩm phù hợp cho xây dựng dân dụng, xây tô và các hạng mục phổ thông.",
     usage: {
       storage: [

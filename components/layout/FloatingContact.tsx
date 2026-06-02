@@ -28,10 +28,10 @@ export default function FloatingContact() {
     <div className="fixed right-4 bottom-4 z-50 flex flex-col gap-3 sm:right-5 sm:bottom-5">
       <a
         href="tel:0394389999"
-        className="group relative flex size-12 items-center justify-center rounded-full bg-brand-blue text-white shadow-[0_4px_16px_rgba(13,21,32,0.2)] transition hover:-translate-y-0.5 hover:shadow-[0_6px_24px_rgba(13,21,32,0.28)]"
+        className="group bg-brand-blue relative flex size-12 items-center justify-center rounded-full text-white shadow-[0_4px_16px_rgba(13,21,32,0.2)] transition hover:-translate-y-0.5 hover:shadow-[0_6px_24px_rgba(13,21,32,0.28)]"
         aria-label="Gọi điện"
       >
-        <span className="absolute inset-0 animate-ping rounded-full bg-brand-blue opacity-30" />
+        <span className="bg-brand-blue absolute inset-0 animate-ping rounded-full opacity-30" />
         <Phone
           className="relative z-10 animate-[phone-shake_1.4s_ease-in-out_infinite]"
           size={21}
@@ -42,10 +42,10 @@ export default function FloatingContact() {
         href="https://zalo.me/0394389999"
         target="_blank"
         rel="noopener noreferrer"
-        className="group relative flex size-12 items-center justify-center rounded-full bg-brand-gold text-xs font-bold text-white shadow-[0_4px_16px_rgba(13,21,32,0.18)] transition hover:-translate-y-0.5"
+        className="group bg-brand-gold relative flex size-12 items-center justify-center rounded-full text-xs font-bold text-white shadow-[0_4px_16px_rgba(13,21,32,0.18)] transition hover:-translate-y-0.5"
         aria-label="Zalo"
       >
-        <span className="absolute inset-0 animate-ping rounded-full bg-brand-gold opacity-30" />
+        <span className="bg-brand-gold absolute inset-0 animate-ping rounded-full opacity-30" />
         <span className="relative z-10 animate-[phone-shake_1.4s_ease-in-out_infinite]">Zalo</span>
       </a>
 
@@ -53,7 +53,7 @@ export default function FloatingContact() {
         <button
           type="button"
           onClick={handleScrollTop}
-          className="flex size-12 items-center justify-center rounded-full bg-white text-brand-blue shadow-[0_4px_16px_rgba(10,31,61,0.1)] ring-1 ring-border/80 transition hover:-translate-y-0.5 hover:bg-surface"
+          className="text-brand-blue ring-border/80 hover:bg-surface flex size-12 items-center justify-center rounded-full bg-white shadow-[0_4px_16px_rgba(10,31,61,0.1)] ring-1 transition hover:-translate-y-0.5"
           aria-label="Cuộn lên đầu trang"
         >
           <ArrowUp size={21} />

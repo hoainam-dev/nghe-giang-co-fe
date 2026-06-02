@@ -44,20 +44,20 @@ export default function VisionMissionSection() {
               return (
                 <Reveal key={item.title} variant="fade-up" delay={index * 100}>
                   <div className="group relative h-full overflow-hidden rounded-[1.25rem] border border-white/16 bg-white/10 p-7 backdrop-blur-md transition duration-300 hover:bg-white/14 sm:p-8">
-                    <div className="absolute top-5 right-5 font-heading text-6xl leading-none font-bold text-white/5 sm:text-7xl">
+                    <div className="font-heading absolute top-5 right-5 text-6xl leading-none font-bold text-white/5 sm:text-7xl">
                       {item.index}
                     </div>
 
                     <div className="relative">
                       <div className="mb-7 flex items-center justify-between gap-4">
-                        <div className="flex size-14 items-center justify-center rounded-2xl bg-brand-gold text-white shadow-[0_4px_16px_rgba(13,21,32,0.2)]">
+                        <div className="bg-brand-gold flex size-14 items-center justify-center rounded-2xl text-white shadow-[0_4px_16px_rgba(13,21,32,0.2)]">
                           <Icon size={26} />
                         </div>
 
-                        <div className="h-px flex-1 bg-linear-to-r from-brand-gold/40 to-transparent" />
+                        <div className="from-brand-gold/40 h-px flex-1 bg-linear-to-r to-transparent" />
                       </div>
 
-                      <h3 className="font-heading text-2xl font-bold text-brand-gold-light sm:text-3xl">
+                      <h3 className="font-heading text-brand-gold-light text-2xl font-bold sm:text-3xl">
                         {item.title}
                       </h3>
 

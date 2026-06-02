@@ -9,6 +9,7 @@ type SectionTitleProps = {
   center?: boolean;
   variant?: "light" | "dark";
   className?: string;
+  classNameTitle?: string;
 };
 
 export default function SectionTitle({
@@ -18,6 +19,7 @@ export default function SectionTitle({
   center = false,
   variant = "light",
   className,
+  classNameTitle,
 }: SectionTitleProps) {
   const isDark = useMemo(() => variant === "dark", [variant]);
   return (
@@ -33,6 +35,7 @@ export default function SectionTitle({
           className={cn(
             "heading-display text-3xl md:text-4xl lg:text-[2.75rem]",
             isDark ? "text-white" : "text-brand-navy",
+            classNameTitle,
           )}
         >
           {title}
@@ -54,7 +57,7 @@ export default function SectionTitle({
 
       {!isDark && (
         <Reveal variant="fade-up" delay={220}>
-          <div className={cn("mt-6 h-px w-16 bg-brand-gold/40", center && "mx-auto")} />
+          <div className={cn("bg-brand-gold/40 mt-6 h-px w-16", center && "mx-auto")} />
         </Reveal>
       )}
     </div>

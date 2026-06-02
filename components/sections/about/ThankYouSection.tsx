@@ -4,9 +4,8 @@ import Reveal from "@/components/ui/Reveal";
 
 export default function ThankYouSection() {
   return (
-    <section className="relative overflow-hidden section-surface py-20">
-      <div className="absolute inset-0 bg-[url('/images/thank-you-bg.jpg')] bg-cover bg-center opacity-20" />
-      <div className="absolute inset-0 bg-surface-warm/92" />
+    <section className="section-surface relative overflow-hidden py-20">
+      <div className="bg-surface-warm/92 absolute inset-0" />
 
       <Container className="relative">
         <div className="mx-auto max-w-4xl">
@@ -15,10 +14,12 @@ export default function ThankYouSection() {
             eyebrow="Lời cảm ơn"
             title="Trân trọng gửi tới Quý khách hàng và Quý đối tác"
             desc="Sự tin tưởng và đồng hành của Quý khách hàng là tài sản quý giá nhất của Nghệ Giang."
+            className="max-w-4xl"
+            classNameTitle="lg:text-4xl"
           />
 
           <Reveal variant="fade-up" delay={120}>
-            <div className="card-elevated mt-12 space-y-6 p-8 leading-8 font-medium text-brand-text-muted md:p-10">
+            <div className="card-elevated text-brand-text-muted mt-12 space-y-6 p-8 leading-8 font-medium md:p-10">
               <p>
                 Công ty chúng tôi xin trân trọng gửi tới Quý khách hàng/Quý đối tác những lời tri ân
                 sâu sắc và chân thành nhất đối với sự tin tưởng, hợp tác và hỗ trợ quý báu của Quý
@@ -38,7 +39,7 @@ export default function ThankYouSection() {
                 cho khách hàng.
               </p>
 
-              <p className="font-bold text-brand-navy">
+              <p className="text-brand-navy font-bold">
                 Kính chúc Quý khách hàng/Quý đối tác nhiều sức khỏe, hạnh phúc, thành công và thịnh
                 vượng. Công Ty TNHH TM và TV Nghệ Giang luôn mong muốn được đồng hành và sẵn sàng
                 phục vụ Quý khách hàng/Quý đối tác trên con đường phát triển mạnh mẽ và bền vững của

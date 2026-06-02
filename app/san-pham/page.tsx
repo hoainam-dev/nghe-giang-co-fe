@@ -25,7 +25,7 @@ export default function ProductPage() {
             </Reveal>
 
             <Reveal variant="fade-up" delay={200}>
-            <p className="font-heading mt-6 max-w-2xl text-sm leading-7 font-medium text-brand-muted/90 sm:text-[17px] lg:leading-8">
+              <p className="font-heading text-brand-muted/90 mt-6 max-w-2xl text-sm leading-7 font-medium sm:text-[17px] lg:leading-8">
                 Danh mục sản phẩm phục vụ công trình dân dụng, công nghiệp và hạ tầng.
               </p>
             </Reveal>

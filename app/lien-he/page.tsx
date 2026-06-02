@@ -61,7 +61,7 @@ export default function ContactPage() {
             </Reveal>
 
             <Reveal variant="fade-up" delay={200}>
-            <p className="font-heading mt-6 max-w-2xl text-sm leading-7 font-medium text-brand-muted/90 sm:text-[17px] lg:leading-8">
+              <p className="font-heading text-brand-muted/90 mt-6 max-w-2xl text-sm leading-7 font-medium sm:text-[17px] lg:leading-8">
                 Đội ngũ Nghệ Giang luôn sẵn sàng hỗ trợ khách hàng, nhà thầu và đại lý trong việc
                 lựa chọn sản phẩm, báo giá và phương án vận chuyển phù hợp.
               </p>

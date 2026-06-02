@@ -10,9 +10,9 @@ type ProductDetailProps = {
 export default function ProductDetailHeader({ product }: ProductDetailProps) {
   return (
     <section className="relative overflow-hidden bg-[#071f45] py-16 text-white md:py-24">
-        <Image src="/images/banner_3.jpg" alt="" fill priority className="object-cover" />
-        <div className="absolute inset-0 bg-[#071f45]/75" />
-        <div className="absolute inset-0 bg-linear-to-r from-[#071f45] via-[#0b4ea2]/60 to-transparent" />
+      <Image src="/images/banner_3.jpg" alt="" fill priority className="object-cover" />
+      <div className="absolute inset-0 bg-[#071f45]/75" />
+      <div className="absolute inset-0 bg-linear-to-r from-[#071f45] via-[#0b4ea2]/60 to-transparent" />
 
       <Container className="relative">
         <div className="max-w-4xl">
@@ -27,7 +27,7 @@ export default function ProductDetailHeader({ product }: ProductDetailProps) {
           </Reveal>
 
           <Reveal variant="fade-up" delay={200}>
-          <p className="font-heading mt-6 max-w-2xl text-sm leading-7 font-medium text-brand-muted/90 sm:text-[17px] lg:leading-8">
+            <p className="font-heading text-brand-muted/90 mt-6 max-w-2xl text-sm leading-7 font-medium sm:text-[17px] lg:leading-8">
               {product.desc}
             </p>
           </Reveal>

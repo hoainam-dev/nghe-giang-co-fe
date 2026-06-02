@@ -54,7 +54,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
             <Reveal variant="fade-right">
               <GLink
                 href="/san-pham#danh-sach"
-                className="mb-6 inline-flex items-center gap-2 text-xs font-medium text-brand-navy transition hover:text-brand-blue sm:mb-8 sm:text-sm"
+                className="text-brand-navy hover:text-brand-blue mb-6 inline-flex items-center gap-2 text-xs font-medium transition sm:mb-8 sm:text-sm"
               >
                 <ArrowLeft size={18} />
                 Quay lại sản phẩm
@@ -123,17 +123,15 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
 
                 {product.usage.mixRatio && (
                   <Reveal variant="fade-up">
-                    <div className="overflow-hidden rounded-[1.25rem] border border-border bg-white shadow-sm sm:rounded-[2rem]">
-                      <div className="border-b border-border bg-brand-blue p-4 text-white sm:p-6">
+                    <div className="border-border overflow-hidden rounded-[1.25rem] border bg-white shadow-sm sm:rounded-[2rem]">
+                      <div className="border-border bg-brand-blue border-b p-4 text-white sm:p-6">
                         <div className="flex items-start gap-3 sm:items-center">
                           <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-white/15 sm:size-12">
                             <Boxes size={22} />
                           </div>
 
                           <div className="min-w-0">
-                            <p className="eyebrow text-[0.6875rem]! sm:text-xs!">
-                              Tỷ lệ cấp phối
-                            </p>
+                            <p className="eyebrow text-[0.6875rem]! sm:text-xs!">Tỷ lệ cấp phối</p>
                             <h3 className="mt-1 text-lg leading-snug font-black sm:text-2xl">
                               Cho 1m³ bê tông, vữa xây
                             </h3>
@@ -145,17 +143,17 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
                         <div className="overflow-x-auto">
                           <table className="w-full min-w-[680px] border-collapse text-left">
                             <thead>
-                              <tr className="bg-surface text-sm text-brand-navy uppercase">
-                                <th className="border-b border-border px-5 py-4 font-black">
+                              <tr className="bg-surface text-brand-navy text-sm uppercase">
+                                <th className="border-border border-b px-5 py-4 font-black">
                                   Vật liệu
                                 </th>
-                                <th className="border-b border-border px-5 py-4 font-black">
+                                <th className="border-border border-b px-5 py-4 font-black">
                                   Đơn vị
                                 </th>
-                                <th className="border-b border-border px-5 py-4 font-black">
+                                <th className="border-border border-b px-5 py-4 font-black">
                                   Bê tông mác 250
                                 </th>
-                                <th className="border-b border-border px-5 py-4 font-black">
+                                <th className="border-border border-b px-5 py-4 font-black">
                                   Vữa xây mác 100
                                 </th>
                               </tr>
@@ -164,16 +162,16 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
                             <tbody>
                               {product.usage.mixRatio.map((row) => (
                                 <tr key={row.material} className="hover:bg-surface">
-                                  <td className="border-b border-slate-100 px-5 py-4 font-bold text-brand-navy">
+                                  <td className="text-brand-navy border-b border-slate-100 px-5 py-4 font-bold">
                                     {row.material}
                                   </td>
-                                  <td className="border-b border-slate-100 px-5 py-4 text-brand-text-muted">
+                                  <td className="text-brand-text-muted border-b border-slate-100 px-5 py-4">
                                     {row.unit}
                                   </td>
-                                  <td className="border-b border-slate-100 px-5 py-4 font-bold text-brand-text">
+                                  <td className="text-brand-text border-b border-slate-100 px-5 py-4 font-bold">
                                     {row.concrete250}
                                   </td>
-                                  <td className="border-b border-slate-100 px-5 py-4 font-bold text-brand-text">
+                                  <td className="text-brand-text border-b border-slate-100 px-5 py-4 font-bold">
                                     {row.mortar100}
                                   </td>
                                 </tr>
@@ -187,25 +185,25 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
                         {product.usage.mixRatio.map((row) => (
                           <div key={row.material} className="p-4">
                             <div className="mb-3 flex items-center justify-between gap-3">
-                              <p className="font-bold text-brand-navy">{row.material}</p>
-                              <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-brand-text-muted">
+                              <p className="text-brand-navy font-bold">{row.material}</p>
+                              <span className="text-brand-text-muted rounded-full bg-slate-100 px-3 py-1 text-xs font-bold">
                                 {row.unit}
                               </span>
                             </div>
 
                             <div className="grid gap-2 text-sm">
-                              <div className="rounded-xl bg-surface p-3">
-                                <p className="text-xs font-bold tracking-[0.12em] text-brand-text-muted uppercase">
+                              <div className="bg-surface rounded-xl p-3">
+                                <p className="text-brand-text-muted text-xs font-bold tracking-[0.12em] uppercase">
                                   Bê tông mác 250
                                 </p>
-                                <p className="mt-1 font-bold text-brand-text">{row.concrete250}</p>
+                                <p className="text-brand-text mt-1 font-bold">{row.concrete250}</p>
                               </div>
 
-                              <div className="rounded-xl bg-surface p-3">
-                                <p className="text-xs font-bold tracking-[0.12em] text-brand-text-muted uppercase">
+                              <div className="bg-surface rounded-xl p-3">
+                                <p className="text-brand-text-muted text-xs font-bold tracking-[0.12em] uppercase">
                                   Vữa xây mác 100
                                 </p>
-                                <p className="mt-1 font-bold text-brand-text">{row.mortar100}</p>
+                                <p className="text-brand-text mt-1 font-bold">{row.mortar100}</p>
                               </div>
                             </div>
                           </div>

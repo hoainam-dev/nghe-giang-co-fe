@@ -50,7 +50,7 @@ export default function FeaturedProductCard({ item }: FeaturedProductCardProps) 
 
         <GLink href={`/san-pham/${item.slug}#chi-tiet`} onClick={(e) => e.stopPropagation()}>
           <div className="mt-6 text-center">
-            <h3 className="font-heading mt-2 text-2xl font-bold text-brand-navy">{item.name}</h3>
+            <h3 className="font-heading text-brand-navy mt-2 text-2xl font-bold">{item.name}</h3>
 
             <div className="btn-gold mt-5 px-5! py-2.5! text-sm!">
               Xem chi tiết <ArrowRight size={15} />

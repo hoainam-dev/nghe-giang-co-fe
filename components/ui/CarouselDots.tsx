@@ -12,7 +12,7 @@ export default function CarouselDots({ count, current, onSelect, className }: Ca
 
   return (
     <div className={cn("flex items-center justify-center gap-3", className)}>
-      <div className="flex items-center gap-2 rounded-full bg-white/90 px-4 py-2 shadow-[0_2px_12px_rgba(10,31,61,0.06)] ring-1 ring-border/60 backdrop-blur">
+      <div className="ring-border/60 flex items-center gap-2 rounded-full bg-white/90 px-4 py-2 shadow-[0_2px_12px_rgba(10,31,61,0.06)] ring-1 backdrop-blur">
         {Array.from({ length: count }).map((_, index) => (
           <button
             key={index}
@@ -20,7 +20,9 @@ export default function CarouselDots({ count, current, onSelect, className }: Ca
             onClick={() => onSelect(index)}
             className={cn(
               "h-1.5 rounded-full transition-all duration-300",
-              current === index ? "w-7 bg-brand-gold" : "w-1.5 bg-brand-blue/30 hover:bg-brand-blue/60",
+              current === index
+                ? "bg-brand-gold w-7"
+                : "bg-brand-blue/30 hover:bg-brand-blue/60 w-1.5",
             )}
             aria-label={`Chuyển đến sản phẩm ${index + 1}`}
           />

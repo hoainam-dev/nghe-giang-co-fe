@@ -39,7 +39,7 @@ export default function PartnersPage() {
             </Reveal>
 
             <Reveal variant="fade-up" delay={200}>
-              <p className="font-heading mt-6 max-w-2xl text-sm leading-7 font-medium text-brand-muted/90 sm:text-[17px] lg:leading-8">
+              <p className="font-heading text-brand-muted/90 mt-6 max-w-2xl text-sm leading-7 font-medium sm:text-[17px] lg:leading-8">
                 Nghệ Giang xây dựng mạng lưới hợp tác bền vững với các nhà máy, nhà thầu, đại lý và
                 đơn vị logistics nhằm mang đến giải pháp cung ứng xi măng ổn định, chuyên nghiệp.
               </p>
@@ -49,8 +49,10 @@ export default function PartnersPage() {
               {partnerStats.map((item, index) => (
                 <Reveal key={item.label} variant="zoom-in" delay={260 + index * 80}>
                   <div className="card-glass rounded-2xl p-4">
-                    <p className="font-heading text-3xl font-bold text-brand-gold-light">{item.value}</p>
-                    <p className="mt-1 text-sm font-medium text-brand-muted/85">{item.label}</p>
+                    <p className="font-heading text-brand-gold-light text-3xl font-bold">
+                      {item.value}
+                    </p>
+                    <p className="text-brand-muted/85 mt-1 text-sm font-medium">{item.label}</p>
                   </div>
                 </Reveal>
               ))}
@@ -59,7 +61,7 @@ export default function PartnersPage() {
         </Container>
       </section>
 
-      <section className="relative overflow-hidden section-muted py-14 sm:py-16 lg:py-20">
+      <section className="section-muted relative overflow-hidden py-14 sm:py-16 lg:py-20">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_20%,rgba(201,162,39,0.1),transparent_28%),radial-gradient(circle_at_88%_15%,rgba(12,90,158,0.08),transparent_30%)]" />
 
         <Container className="relative">
@@ -73,10 +75,10 @@ export default function PartnersPage() {
             {partners.map((partner, index) => (
               <Reveal key={partner.name} variant="fade-up" delay={index * 70}>
                 <div className="group card-elevated relative h-full overflow-hidden p-6">
-                  <div className="absolute -top-10 -right-10 size-28 rounded-full bg-brand-blue/5 transition duration-300 group-hover:bg-brand-gold/10" />
+                  <div className="bg-brand-blue/5 group-hover:bg-brand-gold/10 absolute -top-10 -right-10 size-28 rounded-full transition duration-300" />
 
                   <div className="relative">
-                    <div className="mb-5 flex h-20 items-center justify-center rounded-2xl bg-surface p-4 ring-1 ring-border/60">
+                    <div className="bg-surface ring-border/60 mb-5 flex h-20 items-center justify-center rounded-2xl p-4 ring-1">
                       <Image
                         src={partner.logo}
                         alt={partner.name}
@@ -87,11 +89,15 @@ export default function PartnersPage() {
                     </div>
 
                     <div className="mb-3 flex items-center gap-2">
-                      <BadgeCheck size={17} className="shrink-0 text-brand-gold" />
-                      <h3 className="font-heading text-lg font-bold text-brand-navy">{partner.name}</h3>
+                      <BadgeCheck size={17} className="text-brand-gold shrink-0" />
+                      <h3 className="font-heading text-brand-navy text-lg font-bold">
+                        {partner.name}
+                      </h3>
                     </div>
 
-                    <p className="text-sm leading-7 font-medium text-brand-text-muted">{partner.desc}</p>
+                    <p className="text-brand-text-muted text-sm leading-7 font-medium">
+                      {partner.desc}
+                    </p>
                   </div>
                 </div>
               </Reveal>

@@ -48,8 +48,10 @@ export default function ServiceSection() {
                   <div className="icon-badge mb-6 size-14">
                     <Icon size={26} />
                   </div>
-                  <h3 className="font-heading text-xl font-bold text-brand-navy">{item.title}</h3>
-                  <p className="mt-3 text-sm leading-7 font-medium text-brand-text-muted">{item.desc}</p>
+                  <h3 className="font-heading text-brand-navy text-xl font-bold">{item.title}</h3>
+                  <p className="text-brand-text-muted mt-3 text-sm leading-7 font-medium">
+                    {item.desc}
+                  </p>
                 </div>
               </FadeIn>
             );

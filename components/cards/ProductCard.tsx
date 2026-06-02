@@ -11,7 +11,7 @@ export default function ProductCard({ item }: ProductCardProps) {
     <article className="group card-elevated h-full overflow-hidden">
       <GLink href={`/san-pham/${item.slug}#chi-tiet`} className="w-full">
         <div className="w-full">
-          <div className="relative flex h-[210px] items-center justify-center overflow-hidden bg-surface/50">
+          <div className="bg-surface/50 relative flex h-[210px] items-center justify-center overflow-hidden">
             <GImage
               src={item.image}
               alt={item.name}
@@ -22,7 +22,7 @@ export default function ProductCard({ item }: ProductCardProps) {
           </div>
 
           <div className="border-t border-slate-100 p-5">
-            <h3 className="font-heading text-lg font-bold text-brand-navy">{item.name}</h3>
+            <h3 className="font-heading text-brand-navy text-lg font-bold">{item.name}</h3>
           </div>
         </div>
       </GLink>

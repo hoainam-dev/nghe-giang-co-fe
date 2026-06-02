@@ -81,7 +81,7 @@ export default function HeroSlider() {
                   </Reveal>
 
                   <Reveal variant="blur" delay={100}>
-                    <h2 className="heading-display text-3xl text-white sm:text-4xl md:text-5xl lg:text-[3.25rem] uppercase">
+                    <h2 className="heading-display text-3xl text-white uppercase sm:text-4xl md:text-5xl lg:text-[3.25rem]">
                       {slide.title}
                     </h2>
                   </Reveal>

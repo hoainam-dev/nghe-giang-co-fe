@@ -7,7 +7,6 @@ import { siteConfig } from "@/data/site";
 export default function HeroSection() {
   return (
     <section className="relative overflow-hidden bg-[#071f45]">
-      <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(11,78,162,0.95),rgba(7,31,69,0.9)),url('/images/hero-cement.jpg')] bg-cover bg-center" />
       <div className="absolute -bottom-24 -left-24 size-80 rounded-full bg-blue-400/20 blur-3xl" />
 
       <Container className="relative grid min-h-[680px] items-center gap-12 py-20 lg:grid-cols-[1.1fr_0.9fr]">
@@ -20,7 +19,7 @@ export default function HeroSection() {
           </Reveal>
 
           <Reveal variant="blur" delay={120}>
-            <h1 className="heading-display max-w-4xl text-4xl text-white md:text-5xl lg:text-[3.5rem] uppercase">
+            <h1 className="heading-display max-w-4xl text-4xl text-white uppercase md:text-5xl lg:text-[3.5rem]">
               {siteConfig.name}
             </h1>
           </Reveal>
@@ -33,7 +32,7 @@ export default function HeroSection() {
 
           <Reveal variant="fade-up" delay={320}>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <GLink href="/san-pham" className="btn-gold gap-2">
+              <GLink href="/san-pham#danh-sach" className="btn-gold gap-2">
                 Xem sản phẩm <ArrowRight size={17} />
               </GLink>
             </div>
@@ -41,7 +40,7 @@ export default function HeroSection() {
         </div>
 
         <Reveal variant="scale-up" delay={260}>
-          <div className="rounded-3xl border border-white/14 bg-white/10 p-5 backdrop-blur-md">
+          <div className="sm:rounded-3xl sm:border sm:border-white/14 sm:bg-white/10 sm:p-5 sm:backdrop-blur-md">
             <div className="grid gap-3 sm:grid-cols-2">
               {[
                 { value: "20+", label: "Năm kinh nghiệm", size: "text-4xl" },
@@ -52,11 +51,13 @@ export default function HeroSection() {
                 <Reveal key={stat.label} variant="zoom-in" delay={0}>
                   <div className="card-elevated flex min-h-[120px] flex-col items-center justify-center p-5 text-center">
                     <p
-                      className={`font-heading font-bold text-[#0b4ea2] whitespace-pre-line ${stat.size}`}
+                      className={`font-heading font-bold whitespace-pre-line text-[#0b4ea2] ${stat.size}`}
                     >
                       {stat.value}
                     </p>
-                    <p className="mt-2 text-sm font-medium tracking-wide text-brand-text-muted">{stat.label}</p>
+                    <p className="text-brand-text-muted mt-2 text-sm font-medium tracking-wide">
+                      {stat.label}
+                    </p>
                   </div>
                 </Reveal>
               ))}

@@ -6,68 +6,29 @@ import CarouselDots from "@/components/ui/CarouselDots";
 import ProductCard from "@/components/cards/ProductCard";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
-import type { CarouselApi } from "@/components/ui/carousel";
 import {
   CarouselPrevious,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   Carousel,
+  type CarouselApi,
 } from "@/components/ui/carousel";
+import { useCarouselDots } from "@/hooks/use-carousel-dots";
 import { featuredProducts, productGroups } from "@/data/site";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function ProductSection() {
   const [featuredApi, setFeaturedApi] = useState<CarouselApi>();
-  const [featuredCurrent, setFeaturedCurrent] = useState(0);
-  const [featuredCount, setFeaturedCount] = useState(0);
+  const { current: featuredCurrent, count: featuredCount } = useCarouselDots(featuredApi);
 
   const [productApi, setProductApi] = useState<CarouselApi>();
-  const [productCurrent, setProductCurrent] = useState(0);
-  const [productCount, setProductCount] = useState(0);
-
-  useEffect(() => {
-    if (!featuredApi) return;
-
-    const updateCurrent = () => {
-      setFeaturedCurrent(featuredApi.selectedScrollSnap());
-    };
-
-    setFeaturedCount(featuredApi.scrollSnapList().length);
-    updateCurrent();
-
-    featuredApi.on("select", updateCurrent);
-    featuredApi.on("reInit", updateCurrent);
-
-    return () => {
-      featuredApi.off("select", updateCurrent);
-      featuredApi.off("reInit", updateCurrent);
-    };
-  }, [featuredApi]);
-
-  useEffect(() => {
-    if (!productApi) return;
-
-    const updateCurrent = () => {
-      setProductCurrent(productApi.selectedScrollSnap());
-    };
-
-    setProductCount(productApi.scrollSnapList().length);
-    updateCurrent();
-
-    productApi.on("select", updateCurrent);
-    productApi.on("reInit", updateCurrent);
-
-    return () => {
-      productApi.off("select", updateCurrent);
-      productApi.off("reInit", updateCurrent);
-    };
-  }, [productApi]);
+  const { current: productCurrent, count: productCount } = useCarouselDots(productApi);
 
   return (
     <section id="danh-sach">
-      <div className="relative overflow-hidden section-muted py-12 sm:py-16 lg:py-20">
-        <div className="absolute inset-0 bg-surface/90" />
+      <div className="section-muted relative overflow-hidden py-12 sm:py-16 lg:py-20">
+        <div className="bg-surface/90 absolute inset-0" />
 
         <Container className="relative w-full">
           <SectionTitle center eyebrow="Sản phẩm" title="Sản phẩm tiêu biểu" />
@@ -107,9 +68,7 @@ export default function ProductSection() {
           <Reveal variant="fade-up" delay={200}>
             <div className="mx-auto mt-10 max-w-5xl sm:mt-12">
               <Reveal variant="fade-down">
-                <h3 className="eyebrow mb-5 text-center">
-                  Các sản phẩm khác
-                </h3>
+                <h3 className="eyebrow mb-5 text-center">Các sản phẩm khác</h3>
               </Reveal>
 
               <div className="relative">
@@ -135,12 +94,12 @@ export default function ProductSection() {
 
                   <CarouselPrevious
                     size="icon-xl"
-                    className="left-2 z-20 hidden border-brand-blue/20 bg-white/95 text-brand-blue shadow-[0_4px_16px_rgba(10,31,61,0.08)] backdrop-blur hover:bg-brand-blue hover:text-white md:flex lg:-left-14"
+                    className="border-brand-blue/20 text-brand-blue hover:bg-brand-blue left-2 z-20 hidden bg-white/95 shadow-[0_4px_16px_rgba(10,31,61,0.08)] backdrop-blur hover:text-white md:flex lg:-left-14"
                   />
 
                   <CarouselNext
                     size="icon-xl"
-                    className="right-2 z-20 hidden border-brand-blue/20 bg-white/95 text-brand-blue shadow-[0_4px_16px_rgba(10,31,61,0.08)] backdrop-blur hover:bg-brand-blue hover:text-white md:flex lg:-right-14"
+                    className="border-brand-blue/20 text-brand-blue hover:bg-brand-blue right-2 z-20 hidden bg-white/95 shadow-[0_4px_16px_rgba(10,31,61,0.08)] backdrop-blur hover:text-white md:flex lg:-right-14"
                   />
                 </Carousel>
 

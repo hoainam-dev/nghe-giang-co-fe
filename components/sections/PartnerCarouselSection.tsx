@@ -7,14 +7,14 @@ import Reveal from "@/components/ui/Reveal";
 import Image from "next/image";
 import type { CarouselApi } from "@/components/ui/carousel";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
+import { useCarouselDots } from "@/hooks/use-carousel-dots";
 import { partners } from "@/data/site";
 import { cn } from "@/lib/utils";
 
 export default function PartnerCarouselSection() {
   const [api, setApi] = useState<CarouselApi>();
-  const [current, setCurrent] = useState(0);
-  const [count, setCount] = useState(0);
+  const { current, count } = useCarouselDots(api);
 
   const autoplay = useMemo(
     () =>
@@ -25,25 +25,6 @@ export default function PartnerCarouselSection() {
       }),
     [],
   );
-
-  useEffect(() => {
-    if (!api) return;
-
-    const updateCurrent = () => {
-      setCurrent(api.selectedScrollSnap());
-    };
-
-    setCount(api.scrollSnapList().length);
-    updateCurrent();
-
-    api.on("select", updateCurrent);
-    api.on("reInit", updateCurrent);
-
-    return () => {
-      api.off("select", updateCurrent);
-      api.off("reInit", updateCurrent);
-    };
-  }, [api]);
 
   if (!partners.length) return null;
 
@@ -125,7 +106,7 @@ function PartnerDots({
 
   return (
     <div className="mt-4 flex items-center justify-center gap-3">
-      <div className="flex items-center gap-2 rounded-full bg-white/90 px-4 py-2 shadow-[0_2px_12px_rgba(10,31,61,0.06)] ring-1 ring-border/60 backdrop-blur">
+      <div className="ring-border/60 flex items-center gap-2 rounded-full bg-white/90 px-4 py-2 shadow-[0_2px_12px_rgba(10,31,61,0.06)] ring-1 backdrop-blur">
         {Array.from({ length: count }).map((_, index) => (
           <button
             key={index}
@@ -133,7 +114,9 @@ function PartnerDots({
             onClick={() => onSelect(index)}
             className={cn(
               "h-1.5 rounded-full transition-all duration-300",
-              current === index ? "w-7 bg-brand-gold" : "w-1.5 bg-brand-blue/30 hover:bg-brand-blue/60",
+              current === index
+                ? "bg-brand-gold w-7"
+                : "bg-brand-blue/30 hover:bg-brand-blue/60 w-1.5",
             )}
             aria-label={`Chuyển đến nhóm đối tác ${index + 1}`}
           />

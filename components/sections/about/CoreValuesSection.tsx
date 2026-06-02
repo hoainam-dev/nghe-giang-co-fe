@@ -23,7 +23,7 @@ const valueIcons = {
 
 export default function CoreValuesSection() {
   return (
-    <section className="relative overflow-hidden section-muted py-14 sm:py-16 lg:py-20">
+    <section className="section-muted relative overflow-hidden py-14 sm:py-16 lg:py-20">
       <div className="absolute inset-0 bg-[linear-gradient(rgba(47,84,114,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(47,84,114,0.035)_1px,transparent_1px)] bg-size-[48px_48px]" />
       <div className="gold-accent-line absolute top-0 left-0" />
 
@@ -41,7 +41,7 @@ export default function CoreValuesSection() {
             return (
               <Reveal key={item.title} variant="zoom-in" delay={index * 60}>
                 <div className="group card-elevated relative h-full overflow-hidden p-6">
-                  <div className="absolute -top-10 -right-10 size-28 rounded-full bg-brand-blue/5 transition duration-300 group-hover:bg-brand-gold/10" />
+                  <div className="bg-brand-blue/5 group-hover:bg-brand-gold/10 absolute -top-10 -right-10 size-28 rounded-full transition duration-300" />
 
                   <div className="relative">
                     <div className="mb-5 flex items-center justify-between gap-4">
@@ -49,14 +49,16 @@ export default function CoreValuesSection() {
                         <Icon size={23} />
                       </div>
 
-                      <span className="font-heading text-sm font-bold text-brand-blue/15 transition duration-300 group-hover:text-brand-gold/40">
+                      <span className="font-heading text-brand-blue/15 group-hover:text-brand-gold/40 text-sm font-bold transition duration-300">
                         {String(index + 1).padStart(2, "0")}
                       </span>
                     </div>
 
-                    <h4 className="font-heading text-xl font-bold text-brand-navy">{item.title}</h4>
+                    <h4 className="font-heading text-brand-navy text-xl font-bold">{item.title}</h4>
 
-                    <p className="mt-3 text-sm leading-7 font-medium text-brand-text-muted">{item.desc}</p>
+                    <p className="text-brand-text-muted mt-3 text-sm leading-7 font-medium">
+                      {item.desc}
+                    </p>
                   </div>
                 </div>
               </Reveal>

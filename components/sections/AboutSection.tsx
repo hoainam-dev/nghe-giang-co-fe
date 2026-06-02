@@ -6,9 +6,9 @@ import { CheckCircle2 } from "lucide-react";
 
 export default function AboutSection() {
   return (
-    <section className="relative overflow-hidden section-surface py-20">
+    <section className="section-surface relative overflow-hidden py-20">
       <Image src="/images/banner_1.jpeg" alt="" fill className="object-cover opacity-30" />
-      <div className="absolute inset-0 bg-surface-warm/92" />
+      <div className="bg-surface-warm/92 absolute inset-0" />
       <Container className="relative grid items-center gap-12 lg:grid-cols-1">
         <FadeIn>
           <SectionTitle
@@ -24,8 +24,8 @@ export default function AboutSection() {
               "Định hướng xây dựng thương hiệu uy tín tại miền Trung và Tây Nguyên.",
             ].map((item) => (
               <div key={item} className="flex gap-4">
-                <CheckCircle2 className="mt-0.5 shrink-0 text-brand-gold" size={20} />
-                <p className="text-base font-medium leading-7 text-brand-text-muted">{item}</p>
+                <CheckCircle2 className="text-brand-gold mt-0.5 shrink-0" size={20} />
+                <p className="text-brand-text-muted text-base leading-7 font-medium">{item}</p>
               </div>
             ))}
           </div>

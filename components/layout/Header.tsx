@@ -50,7 +50,7 @@ export default function Header() {
             className="h-[52px] w-[52px] transition-transform duration-300 group-hover:scale-105 sm:h-[60px] sm:w-[60px]"
           />
           <div>
-            <p className="font-heading text-sm leading-snug font-bold text-brand-navy sm:text-[0.95rem]">
+            <p className="font-heading text-brand-navy text-sm leading-snug font-bold sm:text-[0.95rem]">
               {siteConfig.name}
             </p>
           </div>
@@ -63,9 +63,9 @@ export default function Header() {
               href={item.href}
               style={{ transitionDelay: `${index * 80}ms` }}
               className={cn(
-                "relative px-4 py-2 text-[0.8125rem] font-bold tracking-wide text-brand-text-muted transition-all duration-300 hover:text-brand-blue",
+                "text-brand-text-muted hover:text-brand-blue relative px-4 py-2 text-[0.8125rem] font-bold tracking-wide transition-all duration-300",
                 mounted ? "translate-y-0 opacity-100" : "-translate-y-3 opacity-0",
-                "after:absolute after:bottom-0 after:left-4 after:h-px after:w-0 after:bg-brand-gold after:transition-all after:duration-300 hover:after:w-[calc(100%-2rem)]",
+                "after:bg-brand-gold after:absolute after:bottom-0 after:left-4 after:h-px after:w-0 after:transition-all after:duration-300 hover:after:w-[calc(100%-2rem)]",
               )}
             >
               {item.label}
@@ -73,14 +73,17 @@ export default function Header() {
           ))}
         </nav>
 
-        <GLink href="/lien-he" className="btn-gold hidden! px-5! py-2.5! text-[0.8125rem]! lg:inline-flex">
+        <GLink
+          href="/lien-he"
+          className="btn-gold hidden! px-5! py-2.5! text-[0.8125rem]! lg:inline-flex"
+        >
           Liên hệ tư vấn
         </GLink>
 
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="inline-flex size-10 items-center justify-center rounded-xl border border-border/80 text-brand-navy transition hover:border-brand-blue/30 hover:bg-surface lg:hidden"
+          className="border-border/80 text-brand-navy hover:border-brand-blue/30 hover:bg-surface inline-flex size-10 items-center justify-center rounded-xl border transition lg:hidden"
         >
           {open ? <X size={20} /> : <Menu size={20} />}
         </button>
@@ -103,20 +106,13 @@ export default function Header() {
                   transitionDelay: open ? `${index * 70}ms` : "0ms",
                 }}
                 className={cn(
-                  "rounded-xl px-4 py-3 text-sm font-semibold text-brand-text transition-all duration-500 hover:bg-surface hover:text-brand-blue",
+                  "text-brand-text hover:bg-surface hover:text-brand-blue rounded-xl px-4 py-3 text-sm font-semibold transition-all duration-500",
                   open ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0",
                 )}
               >
                 {item.label}
               </GLink>
             ))}
-            <GLink
-              href="/lien-he"
-              onClick={() => setOpen(false)}
-              className="btn-gold mt-2 py-3! text-center"
-            >
-              Liên hệ tư vấn
-            </GLink>
           </nav>
         </div>
       </div>

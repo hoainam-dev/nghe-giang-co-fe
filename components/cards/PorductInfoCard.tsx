@@ -29,7 +29,7 @@ export default function ProductInfoCard({
 
         <div className="min-w-0">
           <p className="eyebrow text-[0.6875rem]! sm:text-xs!">{eyebrow}</p>
-          <h3 className="font-heading mt-1 text-lg leading-snug font-bold text-brand-navy sm:text-2xl">
+          <h3 className="font-heading text-brand-navy mt-1 text-lg leading-snug font-bold sm:text-2xl">
             {title}
           </h3>
         </div>

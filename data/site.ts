@@ -62,46 +62,6 @@ export const coreValues = [
   },
 ];
 
-export const orgChart = {
-  name: "CT HĐTV",
-  children: [
-    {
-      name: "GIÁM ĐỐC",
-      children: [
-        {
-          name: "P. KẾ TOÁN TÀI CHÍNH",
-        },
-        {
-          name: "P. KINH DOANH",
-          children: [
-            {
-              name: "QLKV TÂY NGUYÊN",
-              children: [{ name: "NVTT CÁC ĐỊA BÀN" }],
-            },
-            {
-              name: "QLKV MIỀN TRUNG",
-              children: [{ name: "NVTT CÁC ĐỊA BÀN" }],
-            },
-          ],
-        },
-        {
-          name: "P. LOGISTICS",
-          children: [
-            {
-              name: "QL ĐỘI XE TẢI LỚN",
-              children: [{ name: "HỆ THỐNG KHO TÂY NGUYÊN" }],
-            },
-            {
-              name: "QL ĐỘI XE TẢI NHỎ",
-              children: [{ name: "HỆ THỐNG KHO MIỀN TRUNG" }],
-            },
-          ],
-        },
-      ],
-    },
-  ],
-};
-
 export const featuredProducts = [
   {
     slug: "xi-mang-hoang-thach-pcb30",
@@ -284,13 +244,6 @@ export const pcbCommonInfo = {
   ],
 };
 
-export const services = [
-  "Cung cấp xi măng số lượng lớn",
-  "Tư vấn vật liệu cho công trình",
-  "Phân phối khu vực miền Trung",
-  "Hỗ trợ vận chuyển đến công trình",
-];
-
 export const projects = [
   {
     title: "Công trình dân dụng Đà Nẵng",
@@ -368,3 +321,51 @@ export const contactInfo = {
   workingTime: "Thứ 2 - Thứ 7: 07:30 - 17:30",
   mapEmbedUrl: "",
 };
+
+export const featuredProjects = [
+  {
+    title: "Sun Symphony Residence",
+    slug: "sun-symphony-residence",
+    category: "Khu đô thị / Căn hộ cao cấp",
+    location: "Trần Hưng Đạo, Sơn Trà, Đà Nẵng",
+    image: "/images/projects/sun-symphony-residence.jpg",
+    website: "https://smartrealtors.vn/sun-symphony-residence-tran-hung-dao-da-nang/",
+    desc: "Dự án phức hợp cao cấp bên bờ sông Hàn, sở hữu vị trí nổi bật trên trục Trần Hưng Đạo – Lê Văn Duyệt.",
+  },
+  {
+    title: "The Sun Cosmo Residence",
+    slug: "the-sun-cosmo-residence",
+    category: "Căn hộ / Shophouse cao cấp",
+    location: "Đà Nẵng",
+    image: "/images/projects/the-sun-cosmo-residence.jpg",
+    website: "https://smartrealtors.vn/sun-cosmo-residence-da-nang/",
+    desc: "Dự án bất động sản cao cấp tại Đà Nẵng, kết nối các khu vực trọng điểm và sở hữu lợi thế về cảnh quan đô thị, sông và biển.",
+  },
+  {
+    title: "Chung cư Bàu Tràm Lakeside Đà Nẵng",
+    slug: "chung-cu-bau-tram-lakeside-da-nang",
+    category: "Chung cư / Khu đô thị",
+    location: "Liên Chiểu, Đà Nẵng",
+    image: "/images/projects/bau-tram-lakeside.jpg",
+    website: "https://royaland.com.vn/du-an/du-an-lakeside-palace-lien-chieu-da-nang.htm",
+    desc: "Công trình thuộc khu đô thị Lakeside Bàu Tràm, khu vực phát triển năng động tại quận Liên Chiểu, Đà Nẵng.",
+  },
+  {
+    title: "Bệnh viện Đa khoa Đà Nẵng",
+    slug: "benh-vien-da-khoa-da-nang",
+    category: "Công trình y tế",
+    location: "Hải Phòng, Hải Châu, Đà Nẵng",
+    image: "/images/projects/benh-vien-da-khoa-da-nang.jpg",
+    website: "https://maps.app.goo.gl/2fAEdnevSd299GLt8",
+    desc: "Công trình y tế trọng điểm tại trung tâm thành phố Đà Nẵng, phục vụ nhu cầu khám chữa bệnh của người dân khu vực.",
+  },
+  {
+    title: "Công ty Cổ phần Kim Long Motor Huế",
+    slug: "cong-ty-co-phan-kim-long-motor-hue",
+    category: "Công nghiệp / Nhà máy",
+    location: "Huế",
+    image: "/images/projects/kim-long-motor-hue.jpg",
+    website: "https://kimlongmotor.vn/",
+    desc: "Dự án thuộc lĩnh vực công nghiệp ô tô, gắn với hoạt động sản xuất, lắp ráp, kinh doanh ô tô và hạ tầng công nghiệp.",
+  },
+];

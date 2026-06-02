@@ -236,19 +236,11 @@ h4,
 }
 
 .hero-overlay-light {
-  background: linear-gradient(
-    180deg,
-    rgba(13, 21, 32, 0.86) 0%,
-    rgba(13, 21, 32, 0.92) 100%
-  );
+  background: linear-gradient(180deg, rgba(13, 21, 32, 0.86) 0%, rgba(13, 21, 32, 0.92) 100%);
 }
 
 .page-hero-overlay {
-  background: linear-gradient(
-    180deg,
-    rgba(13, 21, 32, 0.78) 0%,
-    rgba(13, 21, 32, 0.9) 100%
-  );
+  background: linear-gradient(180deg, rgba(13, 21, 32, 0.78) 0%, rgba(13, 21, 32, 0.9) 100%);
 }
 
 /* ── Cards ── */
@@ -335,17 +327,18 @@ h4,
 
 .section-divider {
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--border) 20%, var(--border) 80%, transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--border) 20%,
+    var(--border) 80%,
+    transparent
+  );
 }
 
 .gold-accent-line {
   height: 2px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    var(--brand-gold) 50%,
-    transparent 100%
-  );
+  background: linear-gradient(90deg, transparent 0%, var(--brand-gold) 50%, transparent 100%);
   opacity: 0.55;
 }
 

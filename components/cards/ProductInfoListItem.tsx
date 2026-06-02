@@ -16,7 +16,7 @@ export default function ProductInfoListItem({ item, iconTone }: ProductInfoListI
           iconTone === "gold" ? "text-brand-gold" : "text-brand-blue",
         )}
       />
-      <p className="text-sm leading-7 text-brand-text sm:text-base">{item}</p>
+      <p className="text-brand-text text-sm leading-7 sm:text-base">{item}</p>
     </div>
   );
 }

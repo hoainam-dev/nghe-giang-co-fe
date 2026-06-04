@@ -13,7 +13,7 @@ export const siteConfig = {
     "Xi măng Đà Nẵng",
   ],
   phone: "0394.389.999",
-  email: "nghegiangdn2006@gmai.com",
+  email: "nghegiangdn2006@gmail.com",
   address: "89 Lê Văn Hưu, Phường Ngũ Hành Sơn, TP Đà Nẵng, Việt Nam",
 };
 
@@ -243,24 +243,6 @@ export const pcbCommonInfo = {
     "Trong nhiều năm qua, xi măng Vicem Hoàng Thạch đã được sử dụng cho nhiều công trình công nghiệp trọng điểm và dân dụng trên cả nước.",
   ],
 };
-
-export const projects = [
-  {
-    title: "Công trình dân dụng Đà Nẵng",
-    category: "Nhà ở",
-    image: "/images/mock_project_1.jpg",
-  },
-  {
-    title: "Hạ tầng khu vực miền Trung",
-    category: "Hạ tầng",
-    image: "/images/mock_project_1.jpg",
-  },
-  {
-    title: "Nhà xưởng sản xuất",
-    category: "Công nghiệp",
-    image: "/images/mock_project_1.jpg",
-  },
-];
 
 export const partners = [
   {

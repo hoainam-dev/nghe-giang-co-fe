@@ -32,11 +32,7 @@ export default function ServiceSection() {
       <div className="absolute inset-0 bg-[linear-gradient(rgba(47,84,114,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(47,84,114,0.035)_1px,transparent_1px)] bg-size-[48px_48px]" />
 
       <Container className="relative">
-        <SectionTitle
-          eyebrow="Dịch vụ"
-          title="Giải pháp đồng hành cùng công trình"
-          desc="Thiết kế section theo dạng card hiện đại, dễ mở rộng thêm dịch vụ khi khách hàng có nội dung chính thức."
-        />
+        <SectionTitle eyebrow="Dịch vụ" title="Giải pháp đồng hành cùng công trình" />
 
         <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {items.map((item) => {

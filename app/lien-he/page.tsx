@@ -3,13 +3,15 @@ import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
 import Image from "next/image";
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
+import { createPageMetadata } from "@/lib/seo";
 import { contactInfo } from "@/data/site";
 
-export const metadata = {
+export const metadata = createPageMetadata({
   title: "Liên hệ",
   description:
-    "Liên hệ với Nghệ Giang để được tư vấn sản phẩm xi măng, báo giá và hỗ trợ vận chuyển.",
-};
+    "Liên hệ với Nghệ Giang để được tư vấn sản phẩm xi măng, báo giá và hỗ trợ vận chuyển tại miền Trung và Tây Nguyên.",
+  path: "/lien-he",
+});
 
 const contactCards = [
   {
@@ -44,7 +46,13 @@ export default function ContactPage() {
   return (
     <>
       <section className="relative overflow-hidden bg-[#071f45] py-16 text-white md:py-24">
-        <Image src="/images/banner_3.jpg" alt="" fill priority className="object-cover" />
+        <Image
+          src="/images/banner_3.jpg"
+          alt="Banner liên hệ Nghệ Giang"
+          fill
+          priority
+          className="object-cover"
+        />
         <div className="absolute inset-0 bg-[#071f45]/75" />
         <div className="absolute inset-0 bg-linear-to-r from-[#071f45] via-[#0b4ea2]/60 to-transparent" />
 

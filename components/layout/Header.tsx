@@ -80,13 +80,15 @@ export default function Header() {
           Liên hệ tư vấn
         </GLink>
 
-        <button
-          type="button"
-          onClick={() => setOpen((v) => !v)}
-          className="border-border/80 text-brand-navy hover:border-brand-blue/30 hover:bg-surface inline-flex size-10 items-center justify-center rounded-xl border transition lg:hidden"
-        >
-          {open ? <X size={20} /> : <Menu size={20} />}
-        </button>
+        <div className="size-10">
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            className="border-border/80 text-brand-navy hover:border-brand-blue/30 hover:bg-surface inline-flex size-10 items-center justify-center rounded-xl border transition lg:hidden"
+          >
+            {open ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
       </div>
 
       <div

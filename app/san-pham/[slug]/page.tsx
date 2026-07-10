@@ -4,11 +4,14 @@ import ProductInfoListCard from "@/components/cards/ProductInfoListCard";
 import ProductInfoCard from "@/components/cards/PorductInfoCard";
 import CTASection from "@/components/sections/CTASection";
 import Container from "@/components/ui/Container";
+import JsonLd from "@/components/seo/JsonLd";
 import Reveal from "@/components/ui/Reveal";
 import GLink from "@/components/general/GLink";
 import Image from "next/image";
 import { PackageCheck, ShieldCheck, BadgeCheck, ArrowLeft, Boxes } from "lucide-react";
 import { pcbCommonInfo, productDetails } from "@/data/site";
+import { createPageMetadata } from "@/lib/seo";
+import { getProductJsonLd } from "@/lib/json-ld";
 import { notFound } from "next/navigation";
 import { cn } from "@/lib/utils";
 
@@ -30,10 +33,11 @@ export async function generateMetadata({ params }: ProductDetailPageProps) {
 
   if (!product) return {};
 
-  return {
+  return createPageMetadata({
     title: product.name,
-    description: product.desc,
-  };
+    description: `${product.desc} Phân phối bởi Nghệ Giang tại miền Trung và Tây Nguyên.`,
+    path: `/san-pham/${product.slug}`,
+  });
 }
 
 export default async function ProductDetailPage({ params }: ProductDetailPageProps) {
@@ -44,6 +48,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
 
   return (
     <>
+      <JsonLd data={getProductJsonLd(product)} />
       <ProductDetailHeader product={product} />
 
       <section id="chi-tiet">

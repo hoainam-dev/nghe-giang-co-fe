@@ -22,7 +22,7 @@ export default function ProductCard({ item }: ProductCardProps) {
           </div>
 
           <div className="border-t border-slate-100 p-5">
-            <h3 className="font-heading text-brand-navy text-lg font-bold">{item.name}</h3>
+            <h3 className="font-heading text-brand-navy text-lg font-bold h-14">{item.name}</h3>
           </div>
         </div>
       </GLink>

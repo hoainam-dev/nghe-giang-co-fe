@@ -3,12 +3,26 @@ import CTASection from "@/components/sections/CTASection";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
 import Image from "next/image";
+import { createPageMetadata } from "@/lib/seo";
+
+export const metadata = createPageMetadata({
+  title: "Sản phẩm xi măng",
+  description:
+    "Danh mục sản phẩm xi măng Nghệ Giang: Hoàng Thạch, Hải Vân, Kaito, Vicem Wall Cem PCB30, PCB40 phục vụ công trình dân dụng, công nghiệp và hạ tầng.",
+  path: "/san-pham",
+});
 
 export default function ProductPage() {
   return (
     <>
       <section className="relative overflow-hidden bg-[#071f45] py-16 text-white md:py-24">
-        <Image src="/images/banner_3.jpg" alt="" fill priority className="object-cover" />
+        <Image
+          src="/images/banner_3.jpg"
+          alt="Banner sản phẩm xi măng Nghệ Giang"
+          fill
+          priority
+          className="object-cover"
+        />
         <div className="absolute inset-0 bg-[#071f45]/75" />
         <div className="absolute inset-0 bg-linear-to-r from-[#071f45] via-[#0b4ea2]/60 to-transparent" />
 

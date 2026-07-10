@@ -23,27 +23,27 @@ export default function ThankYouSection() {
               <p>
                 Công ty chúng tôi xin trân trọng gửi tới Quý khách hàng/Quý đối tác những lời tri ân
                 sâu sắc và chân thành nhất đối với sự tin tưởng, hợp tác và hỗ trợ quý báu của Quý
-                vị đối với Công Ty TNHH Thương mại và Tư vấn Nghệ Giang.
+                vị đối với Công ty TNHH Thương Mại và Tư Vấn Nghệ Giang.
               </p>
 
               <p>
                 Được sự ủng hộ, tin tưởng của Quý khách hàng cùng sự nỗ lực không ngừng nghỉ của
-                chúng tôi, thời gian qua Công Ty TNHH TM và TV Nghệ Giang đã đạt được những thành
-                quả rất đáng tự hào, thể hiện ở sự tăng trưởng liên tục và vững chắc.
+                chúng tôi, thời gian qua Công ty TNHH Thương Mại và Tư Vấn Nghệ Giang đã đạt được
+                những thành quả rất đáng tự hào, thể hiện ở sự tăng trưởng liên tục và vững chắc.
               </p>
 
               <p>
-                Với Công Ty TNHH TM và TV Nghệ Giang, tài sản và giá trị lớn nhất chính là lòng tin,
-                là sự ủng hộ của Quý khách hàng/Quý đối tác với những sản phẩm mà chúng tôi cung cấp
-                cũng như đối với mối quan hệ hợp tác hiệu quả và chân thành mà chúng tôi luôn dành
-                cho khách hàng.
+                Với Công ty TNHH Thương Mại và Tư Vấn Nghệ Giang, tài sản và giá trị lớn nhất chính
+                là lòng tin, là sự ủng hộ của Quý khách hàng/Quý đối tác với những sản phẩm mà chúng
+                tôi cung cấp cũng như đối với mối quan hệ hợp tác hiệu quả và chân thành mà chúng
+                tôi luôn dành cho khách hàng.
               </p>
 
               <p className="text-brand-navy font-bold">
                 Kính chúc Quý khách hàng/Quý đối tác nhiều sức khỏe, hạnh phúc, thành công và thịnh
-                vượng. Công Ty TNHH TM và TV Nghệ Giang luôn mong muốn được đồng hành và sẵn sàng
-                phục vụ Quý khách hàng/Quý đối tác trên con đường phát triển mạnh mẽ và bền vững của
-                mình.
+                vượng. Công ty TNHH Thương Mại và Tư Vấn Nghệ Giang luôn mong muốn được đồng hành và
+                sẵn sàng phục vụ Quý khách hàng/Quý đối tác trên con đường phát triển mạnh mẽ và bền
+                vững của mình.
               </p>
             </div>
           </Reveal>

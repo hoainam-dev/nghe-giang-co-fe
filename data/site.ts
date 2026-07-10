@@ -1,7 +1,7 @@
 import { ProductDetail } from "@/types";
 
 export const siteConfig = {
-  name: "Công ty TNHH TM & TV Nghệ Giang",
+  name: "Công ty TNHH Thương Mại và Tư Vấn Nghệ Giang",
   domain: "www.nghegiang.com.vn",
   slogan: "Đồng hành cùng những công trình bền vững",
   description: "Nghệ Giang cung cấp xi măng cho các công trình tại miền Trung và Tây Nguyên.",
@@ -81,13 +81,13 @@ export const featuredProducts = [
 
 export const productGroups = [
   {
-    slug: "xi-mang-hai-van-pcb30",
-    name: "Xi măng Hải Vân PCB30",
+    slug: "xi-mang-vicem-wall-cem-xay-to-cao-cap",
+    name: "Xi măng Vicem Wall Cem xây tô cao cấp",
     image: "/images/products/HV_PCB30.png",
   },
   {
-    slug: "xi-mang-hai-van-pcb40",
-    name: "Xi măng Hải Vân PCB40",
+    slug: "xi-mang-vicem-wall-cem-da-dung-pcb40",
+    name: "Xi măng Vicem Wall Cem đa dụng PCB40",
     image: "/images/products/HV_PCB40.png",
   },
   {
@@ -150,9 +150,9 @@ export const productDetails: ProductDetail[] = [
     },
   },
   {
-    slug: "xi-mang-hai-van-pcb30",
-    name: "Xi măng Hải Vân PCB30",
-    brand: "Xi măng Hải Vân",
+    slug: "xi-mang-vicem-wall-cem-xay-to-cao-cap",
+    name: "Xi măng Vicem Wall Cem xây tô cao cấp",
+    brand: "Xi măng Vicem Wall Cem",
     image: "/images/products/HV_PCB30.png",
     frontImage: "/images/products/HV_PCB30.png",
     desc: "Sản phẩm phù hợp cho xây dựng dân dụng, xây tô và các hạng mục phổ thông.",
@@ -170,9 +170,9 @@ export const productDetails: ProductDetail[] = [
     },
   },
   {
-    slug: "xi-mang-hai-van-pcb40",
-    name: "Xi măng Hải Vân PCB40",
-    brand: "Xi măng Hải Vân",
+    slug: "xi-mang-vicem-wall-cem-da-dung-pcb40",
+    name: "Xi măng Vicem Wall Cem đa dụng PCB40",
+    brand: "Xi măng Vicem Wall Cem",
     image: "/images/products/HV_PCB40.png",
     frontImage: "/images/products/HV_PCB40.png",
     desc: "Sản phẩm có cường độ ổn định, phù hợp nhiều hạng mục công trình.",
@@ -296,12 +296,15 @@ export const partners = [
 ];
 
 export const contactInfo = {
-  company: "Công ty TNHH TM & TV Nghệ Giang",
+  company: "Công ty TNHH Thương Mại và Tư Vấn Nghệ Giang",
   address: "Miền Trung và Tây Nguyên",
   phone: "0394.389.999",
   email: "nghegiangdn2006@gmail.com",
   workingTime: "Thứ 2 - Thứ 7: 07:30 - 17:30",
-  mapEmbedUrl: "",
+  mapUrl:
+    "https://maps.google.com/?q=89+L%C3%AA+V%C4%83n+H%C6%B0u,+Ph%C6%B0%E1%BB%9Dng+Ng%C5%A9+H%C3%A0nh+S%C6%A1n,+TP+%C4%90%C3%A0+N%E1%BA%B5ng,+Vi%E1%BB%87t+Nam",
+  mapEmbedUrl:
+    "https://maps.google.com/maps?q=89+L%C3%AA+V%C4%83n+H%C6%B0u,+Ph%C6%B0%E1%BB%9Dng+Ng%C5%A9+H%C3%A0nh+S%C6%A1n,+TP+%C4%90%C3%A0+N%E1%BA%B5ng,+Vi%E1%BB%87t+Nam&hl=vi&z=16&output=embed",
 };
 
 export const featuredProjects = [

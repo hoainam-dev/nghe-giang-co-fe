@@ -6,12 +6,26 @@ import CTASection from "@/components/sections/CTASection";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
 import Image from "next/image";
+import { createPageMetadata } from "@/lib/seo";
+
+export const metadata = createPageMetadata({
+  title: "Giới thiệu",
+  description:
+    "Tìm hiểu về Công ty TNHH Thương Mại và Tư Vấn Nghệ Giang – đơn vị phân phối xi măng uy tín tại miền Trung và Tây Nguyên từ năm 2006.",
+  path: "/gioi-thieu",
+});
 
 export default function AboutPage() {
   return (
     <>
       <section className="relative overflow-hidden bg-[#071f45] py-16 text-white md:py-24">
-        <Image src="/images/banner_3.jpg" alt="" fill priority className="object-cover" />
+        <Image
+          src="/images/banner_3.jpg"
+          alt="Banner giới thiệu Công ty Nghệ Giang"
+          fill
+          priority
+          className="object-cover"
+        />
         <div className="absolute inset-0 bg-[#071f45]/75" />
         <div className="absolute inset-0 bg-linear-to-r from-[#071f45] via-[#0b4ea2]/60 to-transparent" />
 
@@ -22,7 +36,7 @@ export default function AboutPage() {
 
           <Reveal variant="blur" delay={100}>
             <h1 className="heading-display mt-5 max-w-5xl text-3xl text-white md:text-5xl">
-              Công ty TNHH TM & TV Nghệ Giang
+              Công ty TNHH Thương Mại và Tư Vấn Nghệ Giang
             </h1>
           </Reveal>
 

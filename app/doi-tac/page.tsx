@@ -4,13 +4,16 @@ import CTASection from "@/components/sections/CTASection";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
 import Image from "next/image";
+import { createPageMetadata } from "@/lib/seo";
 import { BadgeCheck } from "lucide-react";
 import { partners } from "@/data/site";
 
-export const metadata = {
-  title: "Các đối tác",
-  description: "Mạng lưới đối tác đồng hành cùng Nghệ Giang trong lĩnh vực phân phối xi măng.",
-};
+export const metadata = createPageMetadata({
+  title: "Đối tác",
+  description:
+    "Mạng lưới đối tác đồng hành cùng Nghệ Giang trong lĩnh vực phân phối xi măng tại miền Trung và Tây Nguyên.",
+  path: "/doi-tac",
+});
 
 const partnerStats = [
   { value: "10+", label: "Đối tác chiến lược" },
@@ -22,7 +25,13 @@ export default function PartnersPage() {
   return (
     <>
       <section className="relative overflow-hidden bg-[#071f45] py-16 text-white md:py-24">
-        <Image src="/images/banner_3.jpg" alt="" fill priority className="object-cover" />
+        <Image
+          src="/images/banner_3.jpg"
+          alt="Banner đối tác Nghệ Giang"
+          fill
+          priority
+          className="object-cover"
+        />
         <div className="absolute inset-0 bg-[#071f45]/75" />
         <div className="absolute inset-0 bg-linear-to-r from-[#071f45] via-[#0b4ea2]/60 to-transparent" />
 

@@ -10,7 +10,13 @@ type ProductDetailProps = {
 export default function ProductDetailHeader({ product }: ProductDetailProps) {
   return (
     <section className="relative overflow-hidden bg-[#071f45] py-16 text-white md:py-24">
-      <Image src="/images/banner_3.jpg" alt="" fill priority className="object-cover" />
+      <Image
+        src="/images/banner_3.jpg"
+        alt={`Banner ${product.name}`}
+        fill
+        priority
+        className="object-cover"
+      />
       <div className="absolute inset-0 bg-[#071f45]/75" />
       <div className="absolute inset-0 bg-linear-to-r from-[#071f45] via-[#0b4ea2]/60 to-transparent" />
 

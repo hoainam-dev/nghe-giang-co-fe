@@ -41,7 +41,7 @@ export default function Header() {
       )}
     >
       <div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <GLink href="/" className="group flex items-center gap-2.5 xl:gap-3.5">
+        <GLink href="/" className="group flex items-center xl:gap-3.5">
           <GImage
             width={70}
             height={70}
@@ -50,7 +50,7 @@ export default function Header() {
             className="h-[52px] w-[52px] transition-transform duration-300 group-hover:scale-105 sm:h-[60px] sm:w-[60px]"
           />
           <div>
-            <p className="font-heading text-brand-navy text-sm leading-snug font-bold sm:text-[0.95rem]">
+            <p className="font-heading text-brand-navy text-sm leading-snug font-bold sm:text-[0.95rem] px-1.5">
               {siteConfig.name}
             </p>
           </div>

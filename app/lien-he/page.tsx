@@ -38,7 +38,7 @@ const contactCards = [
     icon: Clock,
     title: "Thời gian làm việc",
     value: contactInfo.workingTime,
-    desc: "Luôn sẵn sàng hỗ trợ khách hàng trong giờ hành chính.",
+    desc: "Luôn sẵn sàng hỗ trợ KH 24/7.",
   },
 ];
 

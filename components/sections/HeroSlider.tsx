@@ -110,24 +110,26 @@ export default function HeroSlider() {
           className="hover:text-brand-blue right-4 z-20 hidden border-white/20 bg-white/10 text-white backdrop-blur-md transition hover:border-white/40 hover:bg-white md:flex lg:right-8"
         />
 
-        <div className="absolute bottom-6 left-1/2 z-20 flex -translate-x-1/2 items-center gap-3 rounded-full border border-white/10 bg-white/10 px-4 py-2 backdrop-blur-md md:bottom-10">
-          <div className="flex items-center gap-2">
-            {slides.map((slide, index) => (
-              <button
-                key={slide.title}
-                type="button"
-                onClick={() => {
-                  api?.scrollTo(index);
-                  autoplay.reset();
-                }}
+        <div className="absolute bottom-6 left-1/2 z-20 flex -translate-x-1/2 items-center gap-0.5 rounded-full border border-white/10 bg-white/10 px-2 py-1 backdrop-blur-md md:bottom-10">
+          {slides.map((slide, index) => (
+            <button
+              key={slide.title}
+              type="button"
+              onClick={() => {
+                api?.scrollTo(index);
+                autoplay.reset();
+              }}
+              className="flex h-5 w-9 items-center justify-center"
+              aria-label={`Chuyển đến slide ${index + 1}`}
+            >
+              <span
                 className={cn(
                   "h-1.5 rounded-full transition-all duration-300",
                   current === index ? "bg-brand-gold w-7" : "w-1.5 bg-white/50 hover:bg-white/80",
                 )}
-                aria-label={`Chuyển đến slide ${index + 1}`}
               />
-            ))}
-          </div>
+            </button>
+          ))}
         </div>
       </Carousel>
     </section>

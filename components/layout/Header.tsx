@@ -84,21 +84,25 @@ export default function Header() {
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
+            aria-label={open ? "Đóng menu" : "Mở menu"}
+            aria-expanded={open}
+            aria-controls="mobile-nav"
             className="border-border/80 text-brand-navy hover:border-brand-blue/30 hover:bg-surface inline-flex size-10 items-center justify-center rounded-xl border transition lg:hidden"
           >
-            {open ? <X size={20} /> : <Menu size={20} />}
+            {open ? <X size={20} aria-hidden /> : <Menu size={20} aria-hidden />}
           </button>
         </div>
       </div>
 
       <div
+        id="mobile-nav"
         className={cn(
           "absolute top-full left-0 z-50 grid w-full overflow-hidden border-t border-slate-100 bg-white/98 shadow-[0_8px_32px_rgba(10,31,61,0.08)] backdrop-blur-xl transition-[grid-template-rows,opacity] duration-500 ease-out lg:hidden",
           open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0",
         )}
       >
         <div className="min-h-0">
-          <nav className="flex flex-col gap-1 px-4 py-4">
+          <nav className="flex flex-col gap-1 px-4 py-4" aria-label="Menu mobile">
             {navItems.map((item, index) => (
               <GLink
                 key={item.href}

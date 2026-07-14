@@ -83,32 +83,29 @@ export function getProductJsonLd(product: ProductDetail) {
 
   return {
     "@context": "https://schema.org",
-    "@type": "Product",
+    "@type": "WebPage",
+    "@id": `${productUrl}#webpage`,
+    url: productUrl,
     name: product.name,
     description: product.desc,
-    image: product.image ? absoluteUrl(product.image.replace(/^\//, "")) : undefined,
-    url: productUrl,
-    brand: {
-      "@type": "Brand",
-      name: product.brand,
+    inLanguage: "vi-VN",
+    primaryImageOfPage: product.image
+      ? absoluteUrl(product.image.replace(/^\//, ""))
+      : undefined,
+    isPartOf: {
+      "@type": "WebSite",
+      name: siteConfig.name,
+      url: absoluteUrl("/"),
     },
-    manufacturer: {
+    about: {
+      "@type": "Thing",
+      name: product.name,
+      description: product.desc,
+    },
+    publisher: {
       "@type": "Organization",
-      name: product.brand,
-    },
-    offers: {
-      "@type": "Offer",
-      url: productUrl,
-      availability: "https://schema.org/InStock",
-      seller: {
-        "@type": "Organization",
-        name: siteConfig.name,
-        url: absoluteUrl("/"),
-      },
-      areaServed: [
-        { "@type": "AdministrativeArea", name: "Miền Trung" },
-        { "@type": "AdministrativeArea", name: "Tây Nguyên" },
-      ],
+      name: siteConfig.name,
+      url: absoluteUrl("/"),
     },
   };
 }

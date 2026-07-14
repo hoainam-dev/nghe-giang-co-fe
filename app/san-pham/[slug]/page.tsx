@@ -37,6 +37,7 @@ export async function generateMetadata({ params }: ProductDetailPageProps) {
     title: product.name,
     description: `${product.desc} Phân phối bởi Nghệ Giang tại miền Trung và Tây Nguyên.`,
     path: `/san-pham/${product.slug}`,
+    image: product.frontImage ?? product.image,
   });
 }
 

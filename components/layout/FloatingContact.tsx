@@ -42,10 +42,10 @@ export default function FloatingContact() {
         href="https://zalo.me/0394389999"
         target="_blank"
         rel="noopener noreferrer"
-        className="group bg-brand-gold relative flex size-12 items-center justify-center rounded-full text-xs font-bold text-white shadow-[0_4px_16px_rgba(13,21,32,0.18)] transition hover:-translate-y-0.5"
-        aria-label="Zalo"
+        className="group relative flex size-12 items-center justify-center rounded-full bg-[#0068FF] text-xs font-bold text-white shadow-[0_4px_16px_rgba(13,21,32,0.18)] transition hover:-translate-y-0.5"
+        aria-label="Chat Zalo"
       >
-        <span className="bg-brand-gold absolute inset-0 animate-ping rounded-full opacity-30" />
+        <span className="absolute inset-0 animate-ping rounded-full bg-[#0068FF] opacity-30" />
         <span className="relative z-10 animate-[phone-shake_1.4s_ease-in-out_infinite]">Zalo</span>
       </a>
 

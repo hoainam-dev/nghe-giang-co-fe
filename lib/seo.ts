@@ -20,12 +20,14 @@ type PageMetadataOptions = {
   title: string;
   description: string;
   path: string;
+  image?: string;
 };
 
 export function createPageMetadata({
   title,
   description,
   path,
+  image,
 }: PageMetadataOptions): Metadata {
   const url = absoluteUrl(path);
 
@@ -44,10 +46,14 @@ export function createPageMetadata({
       type: "website",
       images: [
         {
-          url: absoluteUrl("images/og-image.png"),
+          url: image
+            ? image.startsWith("http")
+              ? image
+              : absoluteUrl(image.replace(/^\//, ""))
+            : absoluteUrl("images/og-image.png"),
           width: 1200,
           height: 630,
-          alt: siteConfig.slogan,
+          alt: title,
         },
       ],
     },

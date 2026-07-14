@@ -98,7 +98,7 @@ button {
   --brand-blue-light: #4a6d8a;
   --brand-blue-dark: #243f56;
 
-  --brand-gold: #ad8b55;
+  --brand-gold: #d7a321;
   --brand-gold-light: #c4a470;
   --brand-gold-dark: #8f7345;
 
@@ -292,6 +292,7 @@ h4,
 .btn-gold:hover {
   transform: translateY(-1px);
   background: var(--brand-gold-light);
+  color: #071f45;
   box-shadow: 0 4px 20px rgba(13, 21, 32, 0.16);
 }
 

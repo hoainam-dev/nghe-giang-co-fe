@@ -2,7 +2,7 @@ import { ProductDetail } from "@/types";
 
 export const siteConfig = {
   name: "Công ty TNHH Thương Mại và Tư Vấn Nghệ Giang",
-  domain: "nghegiang.com.vn",
+  domain: "www.nghegiang.com.vn",
   slogan: "Đồng hành cùng những công trình bền vững",
   description: "Nghệ Giang cung cấp xi măng cho các công trình tại miền Trung và Tây Nguyên.",
   keywords: [

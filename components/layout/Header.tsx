@@ -47,10 +47,10 @@ export default function Header() {
             height={70}
             alt="Logo"
             src="/images/logo.png"
-            className="h-[52px] w-[52px] transition-transform duration-300 group-hover:scale-105 sm:h-[60px] sm:w-[60px]"
+            className="h-13 w-13 transition-transform duration-300 group-hover:scale-105 sm:h-15 sm:w-15"
           />
           <div>
-            <p className="font-heading text-brand-navy text-sm leading-snug font-bold sm:text-[0.95rem] px-1.5">
+            <p className="font-heading text-brand-navy px-1.5 text-sm leading-snug font-bold sm:text-[0.95rem]">
               {siteConfig.name}
             </p>
           </div>

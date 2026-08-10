@@ -9,7 +9,7 @@ export default function HeroSection() {
     <section className="relative overflow-hidden bg-[#071f45]">
       <div className="absolute -bottom-24 -left-24 size-80 rounded-full bg-blue-400/20 blur-3xl" />
 
-      <Container className="relative grid min-h-[680px] items-center gap-12 py-20 lg:grid-cols-[1.1fr_0.9fr]">
+      <Container className="relative grid min-h-170 items-center gap-12 py-20 lg:grid-cols-[1.1fr_0.9fr]">
         <div>
           <Reveal variant="fade-down">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-white ring-1 ring-white/20">
@@ -49,7 +49,7 @@ export default function HeroSection() {
                 { value: "24/7", label: "Hỗ trợ khách hàng", size: "text-3xl" },
               ].map((stat) => (
                 <Reveal key={stat.label} variant="zoom-in" delay={0}>
-                  <div className="card-elevated flex min-h-[120px] flex-col items-center justify-center p-5 text-center">
+                  <div className="card-elevated flex min-h-30 flex-col items-center justify-center p-5 text-center">
                     <p
                       className={`font-heading font-bold whitespace-pre-line text-[#0b4ea2] ${stat.size}`}
                     >

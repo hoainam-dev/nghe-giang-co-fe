@@ -138,7 +138,7 @@ export default function ContactPage() {
             <div className="card-elevated overflow-hidden">
               <iframe
                 src={contactInfo.mapEmbedUrl}
-                className="h-[360px] w-full border-0 lg:h-[460px]"
+                className="h-90 w-full border-0 lg:h-115"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Bản đồ Nghệ Giang"

@@ -4,13 +4,7 @@ import { ReactNode, useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
 type RevealVariant =
-  | "fade-up"
-  | "fade-down"
-  | "fade-left"
-  | "fade-right"
-  | "zoom-in"
-  | "blur"
-  | "scale-up";
+  "fade-up" | "fade-down" | "fade-left" | "fade-right" | "zoom-in" | "blur" | "scale-up";
 
 type RevealProps = {
   children: ReactNode;

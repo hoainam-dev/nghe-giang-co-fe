@@ -17,8 +17,8 @@ export default function FeaturedProductCard({ item }: FeaturedProductCardProps) 
       onClick={() => setFlipped((v) => !v)}
       className="group relative mx-0.5 h-full cursor-pointer overflow-hidden rounded-3xl transition duration-500 hover:-translate-y-1"
     >
-      <div className="flex min-h-[360px] flex-col items-center justify-center">
-        <div className="relative h-[185px] w-[300px] perspective-[1000px] min-[430px]:h-[230px] min-[430px]:w-[350px]">
+      <div className="flex min-h-90 flex-col items-center justify-center">
+        <div className="relative h-46.25 w-75 perspective-[1000px] min-[430px]:h-57.5 min-[430px]:w-87.5">
           <div
             className={cn(
               "relative size-full transition-transform duration-1000 ease-in-out transform-3d",

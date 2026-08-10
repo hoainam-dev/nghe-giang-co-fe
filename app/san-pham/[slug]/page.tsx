@@ -71,7 +71,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
                 <div
                   className={cn(
                     "grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-1",
-                    !product.packageImage && "mx-auto max-w-[600px] grid-cols-1 md:grid-cols-1",
+                    !product.packageImage && "mx-auto max-w-150 grid-cols-1 md:grid-cols-1",
                   )}
                 >
                   {product.packageImage && (
@@ -147,7 +147,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
 
                       <div className="hidden sm:block">
                         <div className="overflow-x-auto">
-                          <table className="w-full min-w-[680px] border-collapse text-left">
+                          <table className="w-full min-w-170 border-collapse text-left">
                             <thead>
                               <tr className="bg-surface text-brand-navy text-sm uppercase">
                                 <th className="border-border border-b px-5 py-4 font-black">

@@ -83,29 +83,19 @@ export function getProductJsonLd(product: ProductDetail) {
 
   return {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "@id": `${productUrl}#webpage`,
-    url: productUrl,
+    "@type": "Product",
     name: product.name,
     description: product.desc,
-    inLanguage: "vi-VN",
-    primaryImageOfPage: product.image
-      ? absoluteUrl(product.image.replace(/^\//, ""))
-      : undefined,
-    isPartOf: {
-      "@type": "WebSite",
-      name: siteConfig.name,
-      url: absoluteUrl("/"),
+    image: product.image ? absoluteUrl(product.image.replace(/^\//, "")) : undefined,
+    url: productUrl,
+    category: "Xi măng",
+    brand: {
+      "@type": "Brand",
+      name: product.brand,
     },
-    about: {
-      "@type": "Thing",
-      name: product.name,
-      description: product.desc,
-    },
-    publisher: {
+    manufacturer: {
       "@type": "Organization",
-      name: siteConfig.name,
-      url: absoluteUrl("/"),
+      name: product.brand,
     },
   };
 }

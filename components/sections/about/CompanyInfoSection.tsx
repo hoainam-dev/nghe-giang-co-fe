@@ -13,7 +13,7 @@ export default function CompanyInfoSection() {
       <Container className="relative">
         <div className="grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
           <Reveal variant="fade-right">
-            <div className="card-elevated relative min-h-[560px] overflow-hidden p-6 md:p-8">
+            <div className="card-elevated relative min-h-140 overflow-hidden p-6 md:p-8">
               <div className="relative">
                 <div className="bg-brand-blue/8 text-brand-blue mb-6 inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium">
                   <BadgeCheck size={17} />
@@ -69,7 +69,7 @@ export default function CompanyInfoSection() {
                 alt="Công ty Nghệ Giang"
                 width={680}
                 height={760}
-                className="h-[560px] w-full object-cover"
+                className="h-140 w-full object-cover"
               />
               <div className="from-brand-navy-dark/70 via-brand-blue/15 absolute inset-0 bg-linear-to-t to-transparent" />
             </div>

@@ -85,7 +85,7 @@ export default function ProductSection() {
                         key={item.slug}
                         className="basis-full pl-4 sm:basis-1/2 lg:basis-1/3"
                       >
-                        <div className="mx-auto max-w-[360px] sm:mx-px">
+                        <div className="mx-auto max-w-90 sm:mx-px">
                           <ProductCard item={item} />
                         </div>
                       </CarouselItem>

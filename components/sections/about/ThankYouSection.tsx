@@ -1,5 +1,5 @@
-import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
+import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
 
 export default function ThankYouSection() {

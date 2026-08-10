@@ -58,7 +58,7 @@ export default function HeroSlider() {
           loop: true,
         }}
         plugins={[autoplay]}
-        className="h-full min-h-[360px] w-full lg:h-[calc(100vh-4.5rem)] lg:min-h-[640px]"
+        className="h-full min-h-90 w-full lg:h-[calc(100vh-4.5rem)] lg:min-h-160"
       >
         <CarouselContent className="h-full">
           {slides.map((slide, index) => (
@@ -74,7 +74,7 @@ export default function HeroSlider() {
               <div className="absolute inset-0 bg-[#071f45]/75" />
               <div className="absolute inset-0 bg-linear-to-r from-[#071f45] via-[#0b4ea2]/55 to-transparent" />
 
-              <Container className="relative z-10 flex h-full min-h-[360px] items-center md:min-h-[640px]">
+              <Container className="relative z-10 flex h-full min-h-90 items-center md:min-h-160">
                 <div className="max-w-3xl">
                   <Reveal variant="fade-up">
                     <p className="eyebrow mb-5 md:mb-6">Nghệ Giang</p>

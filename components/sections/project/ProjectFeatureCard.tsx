@@ -12,7 +12,7 @@ export default function ProjectFeatureCard({ project }: ProjectFeatureCardProps)
       href={project.website}
       target="_blank"
       rel="noopener noreferrer"
-      className="group relative block h-full min-h-[420px] overflow-hidden rounded-[2rem] bg-white shadow-2xl"
+      className="group relative block h-full min-h-105 overflow-hidden rounded-[2rem] bg-white shadow-2xl"
     >
       <Image
         src={project.image}
